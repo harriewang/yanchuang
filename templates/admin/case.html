@@ -1,0 +1,29 @@
+{% extends "admin/base-admin.html" %}
+
+{% block title%}草帽工作室--后台管理--案例管理{% endblock %}
+
+{%block header%}<p class="add" >案例管理&nbsp;&nbsp;&nbsp;&nbsp;<a href='/admin/addcase/'>添加案例</a></p>{% endblock %}
+{% block admin %}
+<table align="center" cellpadding="0" cellspacing="0" height="600px">
+<tr>
+<td valign="top">
+<table  id="newslist"  align="center" width="700px"  verticalalign="top" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>案例名称</td>
+		<td>编辑案例</td>
+		<td>删除案例</td>
+		<td>发布时间</td>
+	</tr>
+	{% for case in case %}
+	<tr>
+		<td><a href={{case.caseUrl}}>{{case.caseName}}</a></td>
+		<td><a  href="/admin/case/edit_{{ case.id }}">编辑</a></td>
+		<td><a  href="/admin/case/delete_{{case.id}}">删除</a></td>
+		<td>{{case.caseTime}}</td>
+	</tr>
+	{% endfor %}
+</table>
+</td>
+</tr>
+</table>
+{% endblock %}

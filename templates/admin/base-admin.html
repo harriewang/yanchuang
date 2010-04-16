@@ -1,0 +1,33 @@
+{% extends "studio/base.html" %}
+
+{% block css %}<link rel="stylesheet" href="/media/css/admin.css" media="screen" type="text/css" />{% endblock %}
+{% block title%}草帽工作室--后台管理{% endblock %}
+
+{% block content %}
+<tr>
+	<td>
+		<table id="admin" align="center" cellpadding="0" cellspacing="0" width="760px">
+			<tr>
+				<td width="760px" height="30px" valign="top">
+					<ul id="admin-navigation">
+						<li class="main"><a href="/admin/config">网站配置</a></li>
+						<li class="main"><a href="/admin/links">链接管理</a></li>
+						<li class="main"><a href="/admin/content">内容管理</a></li>
+						<li class="main"><a href="/admin/case">案例管理</a></li>
+						<li class="main"><a href="/admin/news">动态管理</a></li>
+						<li class="main"><a href="/admin/inquiry">询价管理</a></li>
+						<li class="main"><a href="/admin/user">用户管理</a></li>
+						<li class="main"><a href="/admin/logout">退出系统</a></li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td  id="header"  colspan="3" height="35px" >&nbsp;{%block header%}{%endblock%}</td>
+			</tr>
+			<tr>
+				<td>{%block admin%}{% endblock %}</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "studio/base.html" %}
+
+{% block title%}{{content.title}}--{{title.title}}{% endblock %}
+
+{% block content %}
+<tr>
+	<td id="position" valign="top">您的位置：<a href="http://www.zozs.com">首页</a>>><a href="http://www.zozs.com/{{content.title}}">{{content.title}}</a></td>
+</tr>
+<tr>
+	<td id="contentdetail" height="400px" valign="top">{{content.content|safe}}</td>
+</tr>
+{% endblock%}

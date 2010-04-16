@@ -1,0 +1,84 @@
+/* CSS Document */
+/*background-image:url(../img/bg.jpg);background-repeat:repeat-x*/
+body {margin:0px auto;}
+#main { margin:0px auto;}
+#banner { background-image:url(../img/banner.jpg);margin:0; background-repeat:no-repeat;}
+#aboutus,#bottom { background-color:white; margin:0;}
+#latest,#news {margin:0; border-top:2px solid white;background-color:#ebebeb}
+#navigation { list-style:none; margin-top:0;}
+#navigation li { display:none;float:left}
+#index { background-image:url(../img/index.png); background-repeat:no-repeat;height:65px; width:135px; cursor:pointer; }
+#studio { background-image:url(../img/studio.png); background-repeat:no-repeat;height:75px; width:135px;cursor:pointer;}
+#service { background-image:url(../img/service.png); background-repeat:no-repeat;height:75px; width:135px;cursor:pointer;}
+#case { background-image:url(../img/case.png); background-repeat:no-repeat;height:75px; width:135px;cursor:pointer;}
+#contacts { background-image:url(../img/contacts.png); background-repeat:no-repeat;height:75px; width:135px;cursor:pointer;}
+.bottom { font-size:12px; color:#990000;font-family:Arial}
+.bottom a:link {color:#990000;text-decoration:none}
+.bottom a:visited {color:#990000;text-decoration:none}
+.bottom a:hover {color:#990000;text-decoration:underline;font-weight:bold}
+.links {font-size:12px; color:#4A4D4A;font-family:Arial}
+.links a:link {color:#4A4D4A;text-decoration:none}
+.links a:visited {color:#4A4D4A;text-decoration:none}
+.links a:hover {color:#4A4D4A;text-decoration:underline}
+#login {width:400px;height:200px;font-family:Tahoma;font-size:12px;color:white;background-color:#333333}
+#login th {font-size:20px;}
+#login #id_email {border:2px white}
+#login #id_password {border:2px white;margin-left:2px;}
+#login .submit {color:#666666;font-size:12px;}
+#login .reset {color:#666666;font-size:12px;margin-left:20px;}
+
+img  {border:0}
+.caseimage {margin-top:10px;}
+.caseurl {color:#666666;font-size:12px;margin-top:5px}
+.caseurl a:link {color:#4A4D4A;text-decoration:none}
+.caseurl a:visited {color:#4A4D4A;text-decoration:none}
+.caseurl a:hover {color:#990000;text-decoration:underline}
+.newstime {font-size:20px;color:#333333;font-family: Arial;}
+.news {padding-right:5px}
+.newscontent {display:block}
+.newstitle {font-family:Arial;font-size:12px;color:#990000,margin-top:12px}
+.newstitle  a:link {font-size:12px;color:#4A4D4A;text-decoration:none}
+.newstitle  a:visited {font-size:12px;color:#4A4D4A;text-decoration:none}
+.newstitle  a:hover {font-size:12px;color:#990000;text-decoration:underline}
+.news-news {color:#990000}
+.news-ing {color:red}
+.news-done {color:#FF9900}
+
+/*当前位置*/
+#position {font-size:12px;color:#4A4D4A;background-color:#ebebeb;padding-left:20px;padding-top:10px;}
+#position a:link {color:#4A4D4A;text-decoration:none}
+#position a:visited {color:#4A4D4A;text-decoration:none}
+#position a:hover {color:#990000;text-decoration:underline}
+
+#contentdetail,#casedetail, #newsdetail,.pagination {background-color:#ebebeb}
+#contentdetail {padding:20px;font-size:12px;color:#696969}
+#contentdetail a:link {color:#696969;text-decoration:none}
+#contentdetail a:visited {color:#696969;text-decoration:none}
+#contentdetail a:hover {color:#990000;text-decoration:underline}
+#newsdetail {border:0;font-size:12px;font-family:Arial; color:#666666}
+#newsdetail   a:link {font-size:12px;color:#4A4D4A;text-decoration:none}
+#newsdetail   a:visited {font-size:12px;color:#4A4D4A;text-decoration:none}
+#newsdetail   a:hover {font-size:12px;color:#990000;text-decoration:underline}
+.casename,.casetime {font-size:25px; color:#990000;font-family:黑体;text-align:middle}
+.casecaption {font-size:12px;color:#666666;font-family:Arial}
+.txt { overflow:hidden;white-space:nowrap;text-overflow:ellipsis;/* for IE */width:500px}
+.txt:after{content:"......";padding-left:3px;font-size:12px;}/* for Firefox */
+
+/*分页样式*/
+.pagination {font-family:Arial;font-size:12px;color:#990000;height:30px;}
+.pagination  a:link {font-size:12px;color:#4A4D4A;text-decoration:none}
+.pagination  a:visited {font-size:12px;color:#4A4D4A;text-decoration:none}
+.pagination  a:hover {font-size:12px;color:#990000;text-decoration:underline}
+
+/*询价系统*/
+#inquiry {background-color:#ebebeb;font-size:12px;color:#990000;}
+form p {font-family:Arial;font-size:12px;color:#990000;margin-left:30px;}
+input,select {font-size:12px;color:#696969;font-family:Arial}
+#id_requirement {height:80px;width:400px;font-size:12px;color:#696969}
+#id_name {margin-left:62px}
+#id_tel {margin-left:79px}
+#id_mobile {margin-left:58px}
+#inquiry #id_email {margin-left:36px}
+#id_budget {margin-left:33px}
+#inquiry .submit {margin-left:133px;font-size:12px;color:#990000}
+#inquiry .reset {font-size:12px;color:#990000}

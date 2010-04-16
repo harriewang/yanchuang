@@ -1,0 +1,21 @@
+{% extends "admin/base-admin.html" %}
+
+{% block title%}草帽工作室--后台管理--修改案例{% endblock %}
+{%block header%}修改案例{% endblock %}
+{% block admin %}
+<table id="editcase" align="left" width="760px" height="600px" verticalalign="top">
+<tr>
+<td  height="30px" align="left" valign="top" >
+<form method="POST" alt="." enctype="multipart/form-data">
+<p>案例名称: <input type="text" name="caseName" id="id_caseName" value="{{currentData.caseName}}" /></p>
+<p>案例地址: <input type="text" name="caseUrl" id="id_caseUrl" value="{{currentData.caseUrl}}" /></p>
+<p>完成时间: <input type="text" name="caseTime" id="id_caseTime" value="{{currentData.caseTime}}" /></p>
+<p>案例截图: <input type="file" name="caseImage" id="id_caseImage" /></p>
+<img id="thumb" src="{{currentData.caseThumbUrl}}" />
+<p>案例描述: <textarea name="caseCaption" cols="40" rows="10" id="id_caseCaption" />{{currentData.caseCaption}}</textarea></p>
+<p><input type="submit" class="submit" value="编辑"><input type="reset" class="reset" value="重置"></p>
+</form>
+</td>
+</tr>
+</table>
+{% endblock %}

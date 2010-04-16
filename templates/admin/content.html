@@ -1,0 +1,27 @@
+{% extends "admin/base-admin.html" %}
+
+{% block title%}草帽工作室--后台管理--内容管理{% endblock %}
+
+{%block header%}<p class="add" >内容管理&nbsp;&nbsp;&nbsp;&nbsp;<a href='/admin/addcontent/'>添加内容</a></p>{% endblock %}
+{% block admin %}
+<table  id="contentlist"  align="center" width="760px" height="600px" verticalalign="top">
+	<tr>
+		<td   valign="top" align="left">
+			<ul>
+				{% for site in sitecontent %}
+				<li class="site">标题：{{site.title}}........................<a  href="/admin/content/edit_{{ site.id }}">编辑</a>........................<a  href="/admin/content/delete_{{site.id}}">删除</a>
+				<ul>
+				{% for sub in subcontent %}
+					{% ifequal site.id sub.sitecontent_id %}
+						<li class="sub">{{sub.title}}...............<a href="/admin/content/editsub_{{ sub.id }}">编辑</a>...............<a class="delete" href="/admin/content/deletesub_{{sub.id}}">删除</a></li>
+					{% endifequal %}
+				{% endfor %}
+				</ul>
+			</li>	
+		{% endfor %}
+	</ul>
+		</td>
+	</tr>
+
+</table>
+{% endblock %}

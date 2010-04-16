@@ -1,0 +1,17 @@
+{% extends "admin/base-admin.html" %}
+
+{% block title%}草帽工作室--后台管理--网站配置{% endblock %}
+
+{%block header%}网站配置{% endblock %}
+{% block admin %}
+<table id="config" align="center" width="760px" height="600px" verticalalign="top">
+<tr>
+<td  height="400px" align="left" valign="top" >
+<form method="POST" alt=".">
+{{form.as_p}}
+<p><input type="submit" class="submit" value="提交"><input type="reset" class="reset" value="重置"></p>
+</form>
+</td>
+</tr>
+</table>
+{% endblock %}

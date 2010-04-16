@@ -1,0 +1,23 @@
+{% extends "admin/base-admin.html" %}
+
+{% block js %}<script src="/media/ckeditor/ckeditor.js" type="text/javascript"></script>{% endblock %}
+{% block title%}草帽工作室--后台管理--添加动态{% endblock %}
+{%block header%}添加动态{% endblock %}
+{% block admin %}
+<table id="addnews" align="left" width="760px" height="600px" verticalalign="top">
+<tr>
+<td  height="30px" align="left" valign="top" >
+<form method="POST" alt=".">
+	{{form.as_p}}
+			<script type="text/javascript">
+				window.onload = function()
+				{
+				CKEDITOR.replace('content');
+				};
+			</script>
+<p><input type="submit" class="submit" value="添加"><input type="reset" class="reset" value="重置"></p>
+</form>
+</td>
+</tr>
+</table>
+{% endblock %}

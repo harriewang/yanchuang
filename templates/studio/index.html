@@ -1,0 +1,64 @@
+{% extends "studio/base.html" %}
+
+{% block title%}{{title.title}}{% endblock %}
+
+{% block content %}
+<tr>
+		<td height="215px" valign="top" id="latest">
+		<table width="720" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td id="header"colspan="3" height="30px" align="left" valign="top"><a href="/case/"><img src="/media/img/latest.png" /></a></td>
+            </tr>
+            <tr>
+            {% for case in case %}
+              <td class="caseimage" height="160px" width="33%" align="center" valign="middle"><a href="/case/detail_{{case.id}}"><img src="{{case.caseThumbUrl}}"></a></td>
+            {% endfor %}
+            </tr>
+            <tr>
+            {% for case in case%}
+              <td class="caseurl" align="center"><a href="{{case.caseUrl}}" target="_blank">{{case.caseName}}</a></td>
+            {% endfor %}
+            </tr>
+          </table></td>
+	</tr>
+	<tr>
+	<td height="200px" align="center" valign="top" id="aboutus" >
+		<table width="720" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td id="header" height="35px" align="left" valign="top"><a href="/关于草帽/"><img src="media/img/aboutus.png" /></a></td>
+          </tr>
+          <tr>
+          	<td align="left">{{about.content|safe|truncatewords:"30"}}</td>
+          </tr>
+        </table></td>
+	</tr>
+	<tr>
+	<td height="200px" align="center" valign="top" id="news">
+	  <table width="720" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td id="header" colspan="3" height="35px" align="left" valign="top"><a href="/news/"><img src="media/img/news.png" /></a></td>
+          </tr>
+          <tr>
+          	<td>
+          	<table width="720" align="center" cellpadding="1px" cellspacing="0">
+          	<tr>
+          {% for news in news %}
+            <td width="33%" class="newstime" align="left">{{news.time|date:"Y-m-d" }}</td>
+          {% endfor %}
+          </tr>
+          {% for news in news %}
+          	<td align="left" class="news">
+          		<p class="newstitle">
+          			<img src="/media/img/136.gif" /><a href="/news/detail_{{news.id}}">{{news.title}}</a>
+          				{% ifequal news.type '新闻' %}<span class="news-news">[新闻]</span>{% endifequal %}
+          				{% ifequal news.type '进行中' %}<span class="news-ing">[进行中]</span>{% endifequal %}
+          				{% ifequal news.type '已完成' %}<span class="news-done">[已完成]</span>{% endifequal %}</p>
+          		<p class="newscontent">{{news.content|safe|truncatewords_html:5}}</p></td>
+          {% endfor %}
+          </tr>
+          		</table>
+          	</td>
+          </tr>
+        </table></td>
+	</tr>
+{% endblock%}

@@ -1,0 +1,17 @@
+{% extends "studio/base.html" %}
+
+{% block title%}我要询价--{{title.title}}{% endblock %}
+
+{% block content %}
+<tr>
+	<td id="position" valign="top">您的位置：<a href="http://www.zozs.com">首页</a>>><a href="http://www.zozs.com/inquiry">我要询价</a></td>
+</tr>
+<tr>
+	<td id="inquiry" height="400px" align="left">
+	<form method="POST" alt="." >
+	{{form.as_p}}
+	<p><input type="submit" class="submit" value="我要询价"><input type="reset" class="reset" value="重新询价"></p>
+	</form>
+	</td>
+</tr>
+{% endblock%}

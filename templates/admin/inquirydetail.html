@@ -1,0 +1,39 @@
+{% extends "admin/base-admin.html" %}
+
+{% block title%}草帽工作室--后台管理--询价管理{% endblock %}
+
+{%block header%}<p class="add" >询价管理</p>{% endblock %}
+{% block admin %}
+<table align="center" cellpadding="0" cellspacing="0" height="600px">
+<tr>
+<td valign="top">
+<table  id="newslist"  align="center" width="700px"  verticalalign="top" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>姓名</td>
+		<td>{{inquiry.name}}</td>
+	</tr>
+	<tr>
+		<td>电话</td>
+		<td>{{inquiry.tel}}</td>
+	</tr>
+	<tr>
+		<td>手机</td>
+		<td>{{inquiry.mobile}}</td>
+	</tr>
+	<tr>
+		<td>E-mail</td>
+		<td>{{inquiry.email}}</td>
+	</tr>
+	<tr>
+		<td>预算</td>
+		<td>{{inquiry.budget}}</td>
+	</tr>
+	<tr>
+		<td>需求</td>
+		<td>{{inquiry.requirement}}</td>
+	</tr>
+</table>
+</td>
+</tr>
+</table>
+{% endblock %}

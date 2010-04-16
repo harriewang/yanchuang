@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="{{title.description}}" />
+<meta name="keywords" content="{{title.keywords}}" />
+<link rel="stylesheet" href="/media/css/index.css" media="screen" type="text/css" />
+{% block css %}{% endblock %}
+<script src="/media/js/jquery.js" type="text/javascript"></script>
+<script src="/media/js/base.js" type="text/javascript"></script>
+{% block js %}{% endblock %}
+<title>{%block title%}{% endblock %}</title>
+</head>
+
+<body>
+<table width="760px" align="center" cellpadding="0" cellspacing="0" id="main" border="0">
+	<tr >
+		<td height="330px" valign="top" id="banner">
+			<ul id="navigation">
+				<li id="index">
+				<a href="/"><img src="/media/img/index-show.png" alt="首页" border="0" style="display:none"></a></li>
+				<li id="studio">
+				<a href="/关于草帽/"><img src="/media/img/studio-show.png" alt="关于草帽" border="0" style="display:none"></a></li>
+				<li id="service">
+				<a href="/服务项目/"><img src="/media/img/service-show.png" alt="服务项目" border="0" style="display:none"></a></li>
+				<li id="case">
+				<a href="/case/"><img src="/media/img/case-show.png" alt="案例" border="0" style="display:none"></a></li>
+				<li id="contacts">
+				<a href="/联系我们/"><img src="/media/img/contacts-show.png" alt="联系我们" border="0" style="display:none"></a></li>
+			</ul>
+	  </td>
+	</tr>
+	{% block content %}
+	{% endblock %}
+	<tr>
+	  <td  valign="middle" id="bottom">
+	  	<table width="760" height="80px" border="0" cellspacing="0" cellpadding="0">
+	  		<tr>
+	  			<td height="30px" class="links">&nbsp;友情链接：{% for links in links%}<a href="{{links.linkUrl}}" target="_blank">{{links.linkTitle}}</a>&nbsp;&nbsp;&nbsp;&nbsp;{% endfor %}</td>
+	  		</tr>
+        		<tr>
+          			<td height="20px" class="bottom">&nbsp;<a href="/联系我们/">联系我们</a> | <a href="/inquiry/">我要询价</a></td>
+          			<td class="bottom" align="right" >CopyRight&copy;2009  草帽工作室 Powered By Luffy 京ICP备05002219号</td>
+        		</tr>
+        		<tr>
+        			<td height="40px">&nbsp;</td>
+        		</tr>
+      	</table>	    
+       </td>
+	</tr>
+</table>
+<span style="display:none"><script language="javascript" type="text/javascript" src="http://js.users.51.la/3365274.js"></script></span>
+</body>
+</html>

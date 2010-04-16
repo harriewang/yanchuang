@@ -1,0 +1,65 @@
+{% extends "studio/base.html" %}
+
+{% block title%}案例--{{title.title}}{% endblock %}
+
+{% block content %}
+<tr>
+	<td id="position" valign="top">您的位置：<a href="http://www.zozs.com">首页</a>>><a href="http://www.zozs.com/case">案例</a></td>
+</tr>
+<tr>
+	<td id="casedetail" height="400px">
+		{% if case%}
+		<table width="720" align="center" border="0" cellspacing="0" cellpadding="0">
+  			<tr>
+    				<td width="320px" rowspan="3" ><img src="{{case.caseImageUrl}}" /></td>
+    				<td width="240px" height="25px" class="casename" align="left" valign="top"><br>{{case.caseName}}</td>
+    				<td class="casetime" align="right" valign="top"><br>{{case.caseTime}}</td>
+  			</tr>
+  			<tr>
+    				<td class="casecaption" align="left" colspan="2">{{case.caseCaption|linebreaks}}</td>
+    			</tr>
+  			<tr>
+    				<td class="caseurl" align="right" colspan="2" valign="top">
+    					<img  src="/media/img/136.gif" /><a href="{{case.caseUrl}}">访问该网站</a></td>
+    			</tr>
+		</table>
+		{% endif %}
+	{% if pagecase %}
+		{% for case in pagecase.object_list %}
+		<table width="720" align="center" border="0" cellspacing="0" cellpadding="0">
+  			<tr>
+    				<td width="220px" height="170px" rowspan="3" valign="bottom" ><a href="/case/detail_{{case.id}}"><img src="{{case.caseThumbUrl}}" /></a></td>
+    				<td class="casename" height="25px" width="240px" align="left" valign="top"><br>{{case.caseName}}</td>
+    				<td class="casetime" align="right" valign="top"><br>{{case.caseTime}}</td>
+  			</tr>
+  			<tr>
+    				<td class="casecaption" align="left" colspan="2"><div class="txt">{{case.caseCaption|linebreaks}}</div></td>
+    			</tr>
+  			<tr>
+    				<td class="caseurl" align="right" colspan="2" valign="top">
+    				<img src="/media/img/136.gif" /><a href="/case/detail_{{case.id}}">案例具体信息</a></td>
+    			</tr>
+		</table>
+		{%endfor%}
+	{% endif %}
+	</td>
+</tr>
+{%if pagecase %}
+<tr>
+	<td class="pagination" align="center">
+		<span class="step-links">
+			{% if pagecase.has_previous %}
+				<a href="?page={{pagecase.previous_page_number}}">上一页</a>
+			{% endif %}
+			<span class="current">
+				第{{pagecase.number}}页,共{{pagecase.paginator.num_pages}}页
+			</span>
+			
+			{% if pagecase.has_next %}
+				<a href="?page={{pagecase.next_page_number }}">下一页</a>
+			{%endif%}
+		</span>
+	</td>
+</tr>
+{%endif%}
+{% endblock%}

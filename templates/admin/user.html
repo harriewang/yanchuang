@@ -1,0 +1,38 @@
+{% extends "admin/base-admin.html" %}
+
+{% block title%}草帽工作室--后台管理--用户管理{% endblock %}
+
+{%block header%}用户管理{% endblock %}
+{% block admin %}
+<table align="center" width="760px" height="600px" verticalalign="top">
+	<tr>
+		<td  id="user" height="175px" align="left">
+			<form method="POST" alt=".">
+				{{form.as_p}}
+				<p><input type="submit" class="submit" value="提交"></p>
+			</form>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top">
+			<table id="userlist" align="left" valign="top" width="700px" cellspacing="0" cellpadding="0">
+				<tr>
+					<td colspan="3">&nbsp;用户列表</td>
+				</tr>
+				<tr>
+					<td width="230px">&nbsp;Email</td>
+					<td width="230px">&nbsp;用户名</td>
+					<td align="center">删除用户</td>
+				</tr>
+				{% for user in user %}
+				<tr>
+					<td height="20px">&nbsp;{{user.email}}</td>
+					<td>&nbsp;{{user.username}}</td>
+					<td class="delete" align="center"><a href="/admin/user/deleteuser_{{user.id}}">删除</a></td>
+				</tr>
+				{% endfor %}
+			</table>
+		</td>
+	</tr>
+</table>
+{% endblock %}

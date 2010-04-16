@@ -1,0 +1,39 @@
+{% extends "studio/base.html" %}
+
+{% block title%}网站动态--{{title.title}}{% endblock %}
+
+{% block content %}
+<tr>
+	<td id="position" valign="top">您的位置：<a href="http://www.zozs.com">首页</a>>><a href="http://www.zozs.com/news">网站动态</a></td>
+<tr>
+<tr>
+	<td id="newsdetail" height="400px" valign="top">
+	{% if news%}
+<table width="720" align="center" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="400px" height="25px" class="newstitle" align="left" valign="bottom" ><br>{{news.title}}</td>
+    <td class="newstime" align="left"><br>{{news.time|date:"Y-m-d"}}</td>
+  </tr>
+  <tr>
+    <td  align="left" colspan="2">{{news.content|safe}}</td>
+    </tr>
+</table>
+	{% endif %}
+<table width="720" align="center" border="0" cellspacing="0" cellpadding="0">
+{% if allnews %}
+		{% for allnews in allnews %}
+  <tr>
+    <td  height="25px" width="400px" align="left" valign="bottom"><a href="/news/detail_{{allnews.id}}">{{allnews.title}}</a>
+    		{% ifequal allnews.type '新闻' %}<span class="news-news">[新闻]</span>{% endifequal %}
+          	{% ifequal allnews.type '进行中' %}<span class="news-ing">[进行中]</span>{% endifequal %}
+          	{% ifequal allnews.type '已完成' %}<span class="news-done">[已完成]</span>{% endifequal %}
+    </td>
+    <td  align="left"><br>{{allnews.time|date:"Y-m-d"}}</td>
+  </tr>
+  		{%endfor%}
+	{% endif %}
+</table>
+
+	</td>
+</tr>
+{% endblock%}
