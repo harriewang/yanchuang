@@ -1,10 +1,21 @@
-# Django settings for zozs project.
+# Django settings for yanchuang project.
+import os
+import site
+
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+#Get current directory of project
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+PROJECT_PACKAGE = os.path.basename(PROJECT_ROOT)
+
+# Add the project folder to the PYTHONPATH, if a packages.pth is present, it'll
+# be included as well.
+site.addsitedir(PROJECT_ROOT, set())
+
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+    ('luffy', 'zhoujialiang@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -21,7 +32,7 @@ DATABASE_PORT = ''             # Set to empty string for default. Not used with 
 # although not all choices may be available on all operating systems.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'GMT-8'
+TIME_ZONE = 'GTM-8'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -35,21 +46,20 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = '/var/www/virtualhost/yanchuang/media/'
+MEDIA_ROOT = os.path.join(PROJECT_ROOT,'media')
 
-#STATIC_PATH = '/var/www/virtualhost/zozs/media/'
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-#MEDIA_URL =  '/site_media/'
+MEDIA_URL = '/media/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-#ADMIN_MEDIA_PREFIX = '/media/'
+ADMIN_MEDIA_PREFIX = '/media/admin'
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '=b!vqjw97^pi(c!ro#xn4429*++42y@$1m^=+#p@=0gsrljnu3'
+SECRET_KEY = '8&e@rrj(%4#f3#1crug=yn3y4da3s6@_yxr2!pb25v0r$fq$n-'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -59,17 +69,15 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.doc.XViewMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'yanchuang.urls'
 
 TEMPLATE_DIRS = (
-	'/var/www/virtualhost/yanchuang/templates/'
+    os.path.join(PROJECT_ROOT,'templates'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -81,16 +89,13 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'studio',
-    'studiouser',
-    'studioconfig',
-    'studiocase',
-    'studiocontent',
-    'studionews',
-    'studioinquiry',
-    'studiolink',
+    'apps.studioconfigs',
+    'apps.studiolinks',
+    'apps.studionews',
 )
 
-TEMPLATE_CONTEXT_PROCESSORS = ( 
-     'django.core.context_processors.auth', 
-)
+# Finally load the local settings if there's any
+try:
+    from settings_local import *
+except ImportError:
+    pass

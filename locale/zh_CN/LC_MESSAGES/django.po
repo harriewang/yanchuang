@@ -3,19 +3,93 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-17 13:07+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2010-04-18 22:26+0800\n"
+"PO-Revision-Date: 2010-04-18 22:27+0800\n"
+"Last-Translator: zhoujialiang <zhoujialiang@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: templates/studio/base.html:43
-msgid "上海岩创网络科技有限公司"
-msgstr ""
+#: .\apps\studioconfigs\models.py:8
+msgid "Site Title"
+msgstr "网站名称"
+
+#: .\apps\studioconfigs\models.py:9
+msgid "Site Description"
+msgstr "网站描述"
+
+#: .\apps\studioconfigs\models.py:10
+msgid "Site Keywords"
+msgstr "网站关键词"
+
+#: .\apps\studioconfigs\models.py:13
+msgid "Studio Config"
+msgstr "工作室设置"
+
+#: .\apps\studioconfigs\models.py:14
+msgid "Studio Configs"
+msgstr " 工作室设置"
+
+#: .\apps\studiolinks\models.py:12
+msgid "Friend Link Title"
+msgstr "友情链接名称"
+
+#: .\apps\studiolinks\models.py:15
+msgid "Friend Link URL"
+msgstr "友情链接地址"
+
+#: .\apps\studiolinks\models.py:18
+msgid "Friend Link Description"
+msgstr "友情链接描述"
+
+#: .\apps\studiolinks\models.py:21
+msgid "Friend Link"
+msgstr "友情链接"
+
+#: .\apps\studiolinks\models.py:22
+msgid "Friend Links"
+msgstr " 友情链接"
+
+#: .\apps\studionews\models.py:11
+msgid "News"
+msgstr "新闻"
+
+#: .\apps\studionews\models.py:12
+msgid "In Progress"
+msgstr "进行中"
+
+#: .\apps\studionews\models.py:13
+msgid "Done"
+msgstr "已完成"
+
+#: .\apps\studionews\models.py:16
+msgid "News Title"
+msgstr "动态名称"
+
+#: .\apps\studionews\models.py:19
+msgid "News Type"
+msgstr "动态类型"
+
+#: .\apps\studionews\models.py:22
+msgid "News Content"
+msgstr "动态内容"
+
+#: .\apps\studionews\models.py:25
+msgid "Create Time"
+msgstr "创建日期"
+
+#: .\apps\studionews\models.py:28
+msgid "Studio News"
+msgstr "工作室动态"
+
+#~ msgid "News Date"
+#~ msgstr "动态日期"
+
+#, fuzzy
+#~ msgid "Studio_Configs"
+#~ msgstr "工作室设置"

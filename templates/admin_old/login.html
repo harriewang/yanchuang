@@ -1,0 +1,24 @@
+{% extends "studio/base.html" %}
+
+{% block title%}草帽工作室--后台管理--用户登录{% endblock %}
+
+{% block content %}
+<tr>
+<td height='400px'>
+<table id="login" align='center'>
+	<tr>
+		<th height="30px">登录草帽工作室后台管理系统</th>
+	</tr>
+	<tr>
+		<td id="config" align="center">
+			<form method="POST" alt=".">
+				{{form.as_p}}
+				<p><input type="submit" class="submit" value="登录"><input type="reset" class="reset" value="重置"></p>
+			</form>
+		</td>
+	</tr>
+</table>
+</td>
+</tr>
+
+{% endblock %}

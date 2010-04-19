@@ -1,0 +1,11 @@
+*.DS_Store
+*.pyc
+*~
+*.db
+*.sqlite
+*$py.class
+.metadata
+.hg*
+.pid
+.sock
+/settings_local.py
