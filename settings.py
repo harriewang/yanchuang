@@ -1,4 +1,5 @@
 # Django settings for yanchuang project.
+# coding:utf-8
 import os
 import site
 
@@ -38,6 +39,11 @@ TIME_ZONE = 'GTM-8'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'zh-cn'
 
+LANGUAGES = (
+    ('zh-cn',   u'中文'),
+    ('en',      u'English'),
+)
+
 SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
@@ -74,13 +80,25 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 
-ROOT_URLCONF = 'yanchuang.urls'
+ROOT_URLCONF = '%s.urls' % PROJECT_PACKAGE
 
 TEMPLATE_DIRS = (
-    os.path.join(PROJECT_ROOT,'templates'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_ROOT,'templates'),
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.request',
+    'studioconfigs.context_processors.i18n',
+    'studioconfigs.context_processors.studio_base',
+    'studioconfigs.context_processors.media',
+
 )
 
 INSTALLED_APPS = (
@@ -89,10 +107,19 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'apps.studioconfigs',
-    'apps.studiolinks',
-    'apps.studionews',
+	
+	# External
+	'tinymce',
+	'sorl.thumbnail',
+	
+    # Local    
+    'studioconfigs',
+    'studiocontents',
 )
+
+# TinyMCE Config
+from settings_tinymce import *
+
 
 # Finally load the local settings if there's any
 try:
