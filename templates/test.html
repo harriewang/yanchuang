@@ -1,5 +1,13 @@
+{% load placeholders_tags %}
+
+
+{% placeholder 123 %}
+
 {% for case in cases %}
 {{case.name}} <img src="{{MEDIA_URL}}{{case.preview}}"/> <img src="{{case.preview.thumbnail}}"> <img src="{{case.preview.extra_thumbnails.medium}}">
 {{LANGUAGE_CODE}}
 {{MEDIA_URL}}
-{% endfor %}6+
+{% endfor %}
+
+{% listne "test_box_1" LANGUAGE_CODE as testbox %}
+{% box testbox|join:"-" %}
