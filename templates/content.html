@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content%}
+<div id="right-box" style="float:right;width:30%;">
+	<div id="navigation-list" style="height:200px;border:1px solid #cccccc;">
+		<h3>导航列表</h3>
+	</div>
+	<div id="fast-link" style="height:200px;border:1px solid #cccccc;">
+		<h3>快速链接</h3>
+	</div>
+</div>
+<div id="content-detail" style="width:70%">
+	<h2>{{ content.title }}</h2>
+	{{ content.content|safe }}
+</div>
+
+{% endblock %}

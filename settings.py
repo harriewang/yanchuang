@@ -98,6 +98,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'studioconfigs.context_processors.i18n',
     'studioconfigs.context_processors.studio_base',
     'studioconfigs.context_processors.media',
+    'studiocontents.context_processors.navigations',
 
 )
 

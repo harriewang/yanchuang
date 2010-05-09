@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content%}
+<h1>首页内容</h1>
+<div id="focus-image">
+	<h2>1.首页焦点图</h2>
+	这儿可使用Placeholder
+</div>
+
+<div id="cases-show">
+	<h2>2.案例展示</h2>
+	<p>从数据库中取出案例，并显示案例预览图，如下：</p>
+	<a href="{{cases.0.url }}">{{ cases.0.name }}</a>
+	<img src="{{ cases.0.preview.thumbnail }}" /><br/>
+</div>
+
+<div id="services">
+	<h2>3.服务项目</h2>
+	<p>可使用Placeholder，或直接调用navigation中的Services内容</p>
+</div>
+
+{% endblock %}

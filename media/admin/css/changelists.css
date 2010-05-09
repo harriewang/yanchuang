@@ -23,7 +23,7 @@
 
 .change-list .filtered table, .change-list .filtered .paginator, .filtered #toolbar, .filtered div.xfull {
     margin-right: 160px !important;
-    width: auto !important;
+    width: 100% !important;
 }
 
 .change-list .filtered table tbody th {

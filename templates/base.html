@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="{{STUDIO_INFO.description}}" />
+<meta name="keywords" content="{{STUDIO_INFO.keywords}}" />
+
+<title>{% block head-title %}{{STUDIO_INFO.title}}{% endblock %}</title>
+
+
+{% block head-link %}
+<!--For css file-->
+<link rel="stylesheet" href="{{MEDIA_URL}}/css/index.css" media="screen" type="text/css" />
+{% endblock %}
+
+{% block head-style %}
+<!--for inline CSS style-->
+{% endblock %}
+
+{% block head-script %}
+<!--For Javascript-->
+{% endblock %}
+
+</head>
+
+<body>
+	<!--Site Top:including logo,language swich,navigation-->
+	<div id="site-top" style="border:1px dashed #333333;margin:10px;">
+		<h1 id="logo">岩创网络--网站顶部</h1>
+		<ul id="navigation-top">
+			<h2>导航</h2>
+			<li><a href="/">首页</a></li>
+			{% for menu in navigation_top %}
+			<li><a href="{% url studiocontents.views.content menu.slug %}">{{ menu.title }}</a>
+				<ul>
+					{% for sub_menu in menu.navigation_set.all %}
+					<li><a href="{% url studiocontents.views.content sub_menu.slug %}">{{ sub_menu.title }}</li>
+					{% endfor %}
+				</ul>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<!--End Site top content-->
+	
+	<!--Site Content-->
+	<div id="site-content" style="border: 1px dashed #333333;margin:10px;">
+		{% block content %}
+		这里是网页内容，使用其他模板时，将网页内容放到这里面。
+		{% endblock %}
+	</div>
+	<!--End Site Content-->
+	
+	<!--Site Bottom-->
+	<div id="site-bottom" style="border: 1px dashed #333333;margin:10px;"><h1>网站底部</h1></div>
+	<!--End Site Bottom-->
+</body>
+
+</html>

@@ -5,8 +5,9 @@ import settings
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^$','hello.hello'),
+    (r'^$','studiocontents.views.index'),
     (r'^test/$','studiocontents.views.test'),
+    (r'(?P<navigation_slug>[a-z0-9-_]+)/$','studiocontents.views.content'),
     # Example:
     # (r'^yanchuang/', include('yanchuang.foo.urls')),
 
