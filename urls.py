@@ -7,6 +7,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     (r'^$','studiocontents.views.index'),
     (r'^test/$','studiocontents.views.test'),
+    (r'^admin/', include(admin.site.urls)),
     (r'(?P<navigation_slug>[a-z0-9-_]+)/$','studiocontents.views.content'),
     # Example:
     # (r'^yanchuang/', include('yanchuang.foo.urls')),
@@ -16,7 +17,7 @@ urlpatterns = patterns('',
     # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    (r'^admin/', include(admin.site.urls)),
+    # (r'^admin/', include(admin.site.urls)),
     
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
 )

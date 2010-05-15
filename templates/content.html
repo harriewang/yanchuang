@@ -1,17 +1,53 @@
 {% extends "base.html" %}
 
 {% block content%}
-<div id="right-box" style="float:right;width:30%;">
-	<div id="navigation-list" style="height:200px;border:1px solid #cccccc;">
-		<h3>导航列表</h3>
-	</div>
-	<div id="fast-link" style="height:200px;border:1px solid #cccccc;">
-		<h3>快速链接</h3>
+<div id='header'>
+	<div class='limiter clear-block'>
+		<h1 class='page-title'>{{ content.title }}</h1>
 	</div>
 </div>
-<div id="content-detail" style="width:70%">
-	<h2>{{ content.title }}</h2>
-	{{ content.content|safe }}
-</div>
-
+<div id="page">
+	<div class='limiter clear-block'>
+		<div class='page-content clear-block'>
+		<!-- Right sidebar -->
+		<!-- Content region -->
+			<div id='main' class='clear-block'>
+				<div id="node-33" class="node clear-block ">
+					<div class="node-content clear-block">
+						<p>{{ content.content|safe }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="block-views-dc_ads-block_1" class="block block-views">
+			<div class="content">
+				<div class="view view-dc-ads view-id-dc_ads view-display-id-block_1 view-dom-id-4"> 
+					<div class="view-content">
+						<div class="item-list">
+							<ul>
+								<li class="views-row views-row-1 views-row-odd views-row-first">  
+									<div class="views-field-field-image-fid">
+										<span class="field-content">  <a href="http://www.drupalgardens.com" target="_blank"><img src="http://www.drupal.com/sites/default/files/imagecache/240x160/drupalgardens.jpg" alt="" title=""  class="imagecache imagecache-240x160 imagecache-default imagecache-240x160_default" width="240" height="160" /></a></span>
+									</div>
+								</li>
+								<li class="views-row views-row-2 views-row-even">  
+									<div class="views-field-field-image-fid">
+										<span class="field-content">  <a href="http://www.wearepropeople.com" target="_blank"><img src="http://www.drupal.com/sites/default/files/imagecache/240x160/propeople_banner.jpg" alt="" title=""  class="imagecache imagecache-240x160 imagecache-default imagecache-240x160_default" width="240" height="160" /></a></span>
+									</div>
+								</li>
+								<li class="views-row views-row-3 views-row-odd views-row-last">  
+									<div class="views-field-field-image-fid">
+										<span class="field-content">  <a href="http://www.siteground.com/special_offers/drupal_promo.htm?referrerid=148921" target="_blank"><img src="http://www.drupal.com/sites/default/files/imagecache/240x160/siteground april 2010.jpg" alt="" title=""  class="imagecache imagecache-240x160 imagecache-default imagecache-240x160_default" width="240" height="160" /></a></span>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="view-footer"><a href="/about-ads">What do these ads pay for?</a></div>
+				</div>
+			</div>
+		</div>
+		<div class='village'></div>
+	</div>
+</div><!-- /#page -->
 {% endblock %}

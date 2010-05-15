@@ -1,0 +1,238 @@
+/**
+ *********************************************
+ * Prototype of styles for horizontal CSS-menu
+ * @data 30.06.2009
+ *********************************************
+ * (X)HTML-scheme:
+ *  <div id="menu">
+ *      <ul class="menu">
+ *          <li><a href="#" class="parent"><span>level 1</span></a>
+ *              <div><ul>
+ *                  <li><a href="#" class="parent"><span>level 2</span></a>
+ *                      <div><ul><li><a href="#"><span>level 3</span></a></li></ul></div>
+ *                  </li>
+ *              </ul></div>
+ *          </li>
+ *          <li class="last"><a href="#"><span>level 1</span></a></li>
+ *      </ul>
+ *  </div>
+ *********************************************
+ */
+
+/* menu::base */
+div#menu {
+    height: 52px;
+    padding-left: 6px;
+    background: url(/media/img/menu/left.png) no-repeat;
+    _background: url(/media/img/menu/left.gif) no-repeat;
+    width:auto;
+}
+
+div#menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: left;
+}
+div#menu ul.menu {
+    padding-right: 6px;
+    background: url(/media/img/menu/right.png) no-repeat right 0;
+    _background: url(/media/img/menu/right.gif) no-repeat right 0;    
+}
+
+div#menu li {
+    position: relative;
+    margin: 0;
+    padding: 0 0px 0 0;
+    display: block;
+    float: left;
+    z-index: 9;
+    width: auto;
+}
+div#menu ul ul li {
+    z-index: 9;
+}
+div#menu li div {
+    list-style: none;
+    float: left;
+    position: absolute;
+    z-index: 11;
+    top: 52px;
+    left: 0;
+    visibility: hidden;
+    width: 180px;
+	  margin: 0px 0 0 -4px;
+    padding: 0; 
+    background: url(/media/img/menu/subsubmenu-top.png) no-repeat 0px 0;
+    _background: url(/media/img/menu/subsubmenu-top.gif) no-repeat 0px 0;  
+}
+div#menu ul ul {
+	  z-index: 12;
+    padding: 0px 4px 10px 4px;
+    background: url(/media/img/menu/submenu-bottom.png) no-repeat 0px bottom;
+    _background: url(/media/img/menu/submenu-bottom.gif) no-repeat 0px bottom;        
+    margin: 10px 0 0 0;    
+}
+div#menu li:hover>div {
+    visibility: visible;
+}
+
+div#menu a {
+    position: relative;
+    z-index: 10;
+    height: 50px;
+    display: block;
+    float: left;
+    line-height: 50px;
+    text-decoration: none;
+    margin-top: 1px;
+    white-space: nowrap;
+    width: auto;
+    padding-right:5px;
+    text-align:center;
+}
+div#menu span {
+    margin-top: 2px;
+    padding-left: 15px;
+    color: #fff;
+    font: normal 13px Helvetica,Arial,FreeSans,sans-serif;
+    background: none;
+    line-height: 50px;	
+    display: block;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 95% 0;
+    text-align: center;
+}
+
+/* menu::level1 */
+div#menu a {
+    padding: 0 10px 0 0;
+    line-height: 50px;
+    height: 52px;
+    margin-right: 5px;
+    _margin-right: 1px;
+    background: none;
+    text-transform: uppercase;
+}
+div#menu a:hover {
+    background:  url(/media/img/menu/selected-right-sub.png)  no-repeat right -1px;
+}
+div#menu a:hover span {
+    background: url(/media/img/menu/selected-left-sub.png) no-repeat 0 -3px;
+}
+div#menu li.current a,
+div#menu ul.menu>li:hover>a {
+    background: url(/media/img/menu/selected-right-sub.png)  no-repeat right -1px;
+}
+div#menu li.current a span,
+div#menu ul.menu>li:hover>a span {
+    background: url(/media/img/menu/selected-left-sub.png) no-repeat 0 -3px;
+}
+
+div#menu ul.menu>li:hover>a span {
+	  color: #07b3e1;
+}
+div#menu li {  }
+div#menu li.last { background: none; }
+
+/* menu::level2 */
+div#menu ul ul li {
+    background: none;
+    padding: 0;
+}
+div#menu ul ul a {
+    padding: 0px;
+    height: auto;
+    float: none;
+    display: block;
+    line-height: 25px;
+    font-size: 13px;
+    color: #fff;
+    z-index: -1;
+    padding-left: 5px;
+    white-space: normal;
+    width: 152px;
+    margin: 0 8px;
+    text-transform: none;
+}
+    
+div#menu ul ul a span {
+	  padding: 0 5px;
+    line-height: 25px;
+    font-size: 13px;
+}
+div#menu li.current ul a,
+div#menu li.current ul a span {
+    background:none;
+}
+div#menu ul ul a:hover {
+ background:none;
+ background-color: #3c3c3c;
+}
+div#menu ul ul a:hover span {
+	background:none;
+	color: #07b3e1;
+}
+div#menu ul ul a.parent {
+  background: url(/media/img/menu/submenu-pointer.png) no-repeat right bottom;
+  _background-image: url(/media/img/menu/submenu-pointer-hover.gif);
+}
+div#menu ul ul a.parent span {
+  background:none; 
+}
+div#menu ul ul a.parent:hover {
+  background: url(/media/img/menu/submenu-pointer.png) no-repeat right bottom;
+  _background: url(/media/img/menu/submenu-pointer-hover.gif) no-repeat right bottom;
+  background-color: #3c3c3c;
+}
+div#menu ul ul a.parent:hover span {
+  background:none; 
+}
+div#menu ul ul span {
+	
+    margin-top: 0;
+    text-align: left;
+}
+div#menu ul ul li.last { background: none; }
+div#menu ul ul li {
+    width: 100%;
+}
+
+/* menu::level3 */
+div#menu ul ul div {
+    width: 180px;
+    padding: 0;
+    margin: -62px 0 0 165px !important;
+}
+div#menu ul ul ul {
+    padding: 10px 4px 0 4px;	
+}
+div#menu ul ul div li {
+    position:relative;
+    top:-10px;
+}
+
+/* lava lamp */
+div#menu li.back {
+    background: url(/media/img/menu/selected-left-sub.png) no-repeat 0 0;
+    width: 5px;
+    height: 52px;
+    z-index: 8;
+    position: absolute;
+    padding: 0;
+    margin: 0px 0 0 0;
+}
+
+div#menu li.back .left {
+    padding:0;
+    width:auto;
+    background: url(/media/img/menu/selected-right-sub.png) no-repeat right 0;
+    height: 52px;
+    margin: 0 0 0 5px;
+    float: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    visibility: visible;
+}

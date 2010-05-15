@@ -1,59 +1,70 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="description" content="{{STUDIO_INFO.description}}" />
-<meta name="keywords" content="{{STUDIO_INFO.keywords}}" />
-
-<title>{% block head-title %}{{STUDIO_INFO.title}}{% endblock %}</title>
-
-
-{% block head-link %}
-<!--For css file-->
-<link rel="stylesheet" href="{{MEDIA_URL}}/css/index.css" media="screen" type="text/css" />
-{% endblock %}
-
-{% block head-style %}
-<!--for inline CSS style-->
-{% endblock %}
-
-{% block head-script %}
-<!--For Javascript-->
-{% endblock %}
-
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="{{STUDIO_INFO.description}}" />
+	<meta name="keywords" content="{{STUDIO_INFO.keywords}}" />
+	<title>{% block head-title %}{{STUDIO_INFO.title}}{% endblock %}</title>
+	{% block head-link %}
+	<!--For css file-->
+	<link type="text/css" rel="stylesheet" media="all" href="/media/css/base.css" />
+    <!--[if lt IE 7]>
+    <style type="text/css" media="all">@import "{{MEDIA_URL}}css/ie6.css";</style>
+    <![endif]-->
+    <!-- Initialize each slider on the page. Each slider must have a unique id -->
+    <link type="text/css" href="{{MEDIA_URL}}css/menu.css" rel="stylesheet" />
+	{% endblock %}
+	
+	{% block head-style %}
+	<!--for inline CSS style-->
+	{% endblock %}
+	
+	{% block head-script %}
+	<!--For Javascript-->
+	{% endblock %}
 </head>
+<body class="drupalcom not-logged-in page-frontpage no-sidebars">
+<div id='navigation'>
+	<div class='limiter clear-block'>
+    	<a href="/" class="logo active">岩创网络</a>
+    	<div id="menu" style="float:left;margin-left:60px;">
+		    <ul class="menu">
+		        <li><a href="/" class="parent"><span>首页</span></a></li>
+		        {% for menu in navigation_top %}
+		        <li {% if forloop.last %} class="last"{% endif %}><a href="{% url studiocontents.views.content menu.slug %}"><span>{{ menu.title }}</span></a>
+		            {% if menu.navigation_set.all %}
+		            <div><ul>
+		                {% for sub_menu in menu.navigation_set.all %}
+		                <li><a href="{% url studiocontents.views.content sub_menu.slug %}"><span>{{ sub_menu.title }}</span></a></li>
+		                {% endfor %}
+		            </ul></div>
+		            {% endif %}
+		        </li>
+		        {% endfor %}
+		    </ul>
+		</div>
+    </div>
+</div>
+{% block content %}
+这里是网页内容，使用其他模板时，将网页内容放到这里面。
+{% endblock %}
 
-<body>
-	<!--Site Top:including logo,language swich,navigation-->
-	<div id="site-top" style="border:1px dashed #333333;margin:10px;">
-		<h1 id="logo">岩创网络--网站顶部</h1>
-		<ul id="navigation-top">
-			<h2>导航</h2>
-			<li><a href="/">首页</a></li>
-			{% for menu in navigation_top %}
-			<li><a href="{% url studiocontents.views.content menu.slug %}">{{ menu.title }}</a>
-				<ul>
-					{% for sub_menu in menu.navigation_set.all %}
-					<li><a href="{% url studiocontents.views.content sub_menu.slug %}">{{ sub_menu.title }}</li>
-					{% endfor %}
-				</ul>
-			</li>
-			{% endfor %}
-		</ul>
-	</div>
-	<!--End Site top content-->
-	
-	<!--Site Content-->
-	<div id="site-content" style="border: 1px dashed #333333;margin:10px;">
-		{% block content %}
-		这里是网页内容，使用其他模板时，将网页内容放到这里面。
-		{% endblock %}
-	</div>
-	<!--End Site Content-->
-	
-	<!--Site Bottom-->
-	<div id="site-bottom" style="border: 1px dashed #333333;margin:10px;"><h1>网站底部</h1></div>
-	<!--End Site Bottom-->
+<div id="footer"><div class="limiter clear-block">
+      <div class="footer-links"><a href="/contact" title="">Contact</a> / <a href="/credits" title="">Photo credits</a></div>
+      <div class="advertise-link"><a href="/advertise">Want your ad here?</a></div>
+      <div class="trademark-link"><a href="/trademark">Drupal trademark policy</a></div>
+  </div></div><!-- /#footer -->
+
+  <div id='legal'><div class='limiter clear-block'>
+    &copy; 2009  &bull; Drupal is a registered trademark of <a href="http://buytaert.net">Dries Buytaert</a>.  </div></div>
+
+    <script type="text/javascript" src="/media/js/base.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/" });
+//--><!]]>
+</script>
+<script type="text/javascript" src="/media/js/menu.js"></script>
+<a href="http://apycom.com/" style="display:none;"></a>
 </body>
-
 </html>
