@@ -20,11 +20,21 @@ def index(request):
 	)
 	
 def content(request, navigation_slug):
+	
 	content = get_object_or_404(Navigation, slug=navigation_slug)
 	
 	return render_to_response(
 		'content.html',
-		{'content': content},
+		{'context':content},
+		context_instance = RequestContext(request)
+	)
+	
+def cases(request):
+	cases = Case.objects.all()
+	
+	return render_to_response(
+		'cases.html',
+		{'cases':cases},
 		context_instance = RequestContext(request)
 	)
 		

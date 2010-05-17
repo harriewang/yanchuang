@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     (r'^$','studiocontents.views.index'),
     (r'^test/$','studiocontents.views.test'),
     (r'^admin/', include(admin.site.urls)),
+    (r'^cases/$','studiocontents.views.cases'),
     (r'(?P<navigation_slug>[a-z0-9-_]+)/$','studiocontents.views.content'),
     # Example:
     # (r'^yanchuang/', include('yanchuang.foo.urls')),

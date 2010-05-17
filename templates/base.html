@@ -33,7 +33,8 @@
 		        {% for menu in navigation_top %}
 		        <li {% if forloop.last %} class="last"{% endif %}><a href="{% url studiocontents.views.content menu.slug %}"><span>{{ menu.title }}</span></a>
 		            {% if menu.navigation_set.all %}
-		            <div><ul>
+		            <div>
+		            <ul>
 		                {% for sub_menu in menu.navigation_set.all %}
 		                <li><a href="{% url studiocontents.views.content sub_menu.slug %}"><span>{{ sub_menu.title }}</span></a></li>
 		                {% endfor %}
