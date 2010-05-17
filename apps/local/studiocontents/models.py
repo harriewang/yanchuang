@@ -97,10 +97,15 @@ class Case(models.Model):
 	url                 = models.URLField(_('Case URL'), verify_exists=False)
 	preview             = ImageWithThumbnailsField(
 							upload_to = 'cases',
-							thumbnail = {'size':(220,220)},
+							thumbnail = {'size':(240,160), 'options': ['crop']},
 							extra_thumbnails = {
-								'medium': {'size':(400,400)}
-							},				
+								'100_100': {'size':(100,100), 'options': ['crop']},
+								'420_300': {'size':(420,300)},
+								'210_80': {'size':(210,80), 'options': ['crop']},
+							},
+							generate_on_save = True,
+							null=True,
+							blank=True,		
 	)
 	complete_time       = models.DateField(_('Complete Time'))
 	active              = models.BooleanField(_('Actived'), default=True)

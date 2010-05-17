@@ -35,7 +35,7 @@
 <div class='matrix-caption matrix-caption-1 clear-block'>
     
   <div class="views-field-body">
-                <div class="field-content">Drupal is enterprise-ready and invading <a href="http://buytaert.net/tag/fortune-500">Fortune 500 companies</a>.
+                <div class="field-content">岩创为 <a href="http://buytaert.net/tag/fortune-500">世界五百强</a> 建设品牌网站.
 </div>
   </div>
 </div>
@@ -75,7 +75,7 @@
 <div class='matrix-caption matrix-caption-1 clear-block'>
     
   <div class="views-field-body">
-                <div class="field-content">Drupal is more than a publishing platform; it's also a <strong>hair style</strong>.</div>
+                <div class="field-content">岩创有专业的团队承接 <strong>企业网站</strong> 建设.</div>
   </div>
 </div>
     </div>
@@ -112,7 +112,7 @@
 <div class='matrix-caption matrix-caption-1 clear-block'>
     
   <div class="views-field-body">
-                <div class="field-content">Drupal will get into <strong>space</strong>.</div>
+                <div class="field-content">岩创网络旗下 <strong>网站</strong>.</div>
   </div>
 </div>
     </div>
@@ -146,7 +146,7 @@
 	        </div>
 	        <div class='site-links clear-block'>
 	            <ul class="links primary-links">
-	            	<li class="groups first"><a href="http://groups.drupal.org" title="Be a part of the Drupal community" target="_blank"><span class='icon'></span><strong>groups</strong>.drupal.org<span class='description'>Be a part of the Drupal community</span></a></li><li class="planet"><a href="http://planet.drupal.org" title="Stay on top of the Drupal action" target="_blank"><span class='icon'></span><strong>planet</strong>.drupal.org<span class='description'>Stay on top of the Drupal action</span></a></li><li class="drupal last"><a href="http://drupal.org" title="Get Drupal + Get started" target="_blank"><span class='icon'></span><strong>drupal</strong>.org<span class='description'>Get Drupal + Get started</span></a></li>
+	            	<li class="groups first"><a href="http://site.yancreate.com" title="企业网站生成平台" target="_blank"><span class='icon'></span><strong>site</strong>.yancreate.com<span class='description'>企业网站生成平台</span></a></li><li class="planet"><a href="http://tellceo.yancreate.com" title="企业快捷沟通平台，企业微博客" target="_blank"><span class='icon'></span><strong>tellceo</strong>.yancreate.com<span class='description'>企业快捷沟通平台，企业微博客</span></a></li><li class="drupal last"><a href="http://yancreate.com" title="网站建设 + 网络品牌建设" target="_blank"><span class='icon'></span><strong>yancreate</strong>.com<span class='description'>品牌网站建设 + 网站网络推广</span></a></li>
 	            </ul>
 			</div>
 		</div>
@@ -159,7 +159,7 @@
 						<ul>
 							<li class="views-row views-row-1 views-row-odd views-row-first">  
 								<div class="views-field-field-image-fid">
-									<span class="field-content">  <a href="http://www.drupalgardens.com" target="_blank"><img src="http://www.drupal.com/sites/default/files/imagecache/240x160/drupalgardens.jpg" alt="" title=""  class="imagecache imagecache-240x160 imagecache-default imagecache-240x160_default" width="240" height="160" /></a></span>
+									<span class="field-content">  <a href="{{cases.0.url }}" target="_blank"><img src="{{ cases.0.preview.thumbnail }}" alt="" title=""  class="imagecache imagecache-240x160 imagecache-default imagecache-240x160_default" alt="{{ cases.0.name }}" width="240" height="160" /></a></span>
 								</div>
 							</li>
 							<li class="views-row views-row-2 views-row-even">  
@@ -191,7 +191,7 @@
 	<div id="cases-show">
 		<h2>2.案例展示</h2>
 		<p>从数据库中取出案例，并显示案例预览图，如下：</p>
-		<a href="{{cases.0.url }}">{{ cases.0.name }}</a>
+		<a href="{{cases.0.url }}">～{{ cases.0.name }}</a>
 		<img src="{{ cases.0.preview.thumbnail }}" /><br/>
 	</div>
 	
@@ -200,4 +200,5 @@
 		<p>可使用Placeholder，或直接调用navigation中的Services内容</p>
 	</div>
 </div>
+{{ cases.0.preview.100_100 }}
 {% endblock %}
