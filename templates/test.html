@@ -4,7 +4,8 @@
 {% placeholder 123 %}
 
 {% for case in cases %}
-{{case.name}} <img src="{{MEDIA_URL}}{{case.preview}}"/> <img src="{{case.preview.thumbnail}}"> <img src="{{case.preview.extra_thumbnails.medium}}">
+{{case.name}} <img src="{{MEDIA_URL}}{{case.preview}}" style="display:none;"/> <img src="{{case.preview.thumbnail}}"> <img src="{{case.preview.extra_thumbnails.210_80}}"><img src="{{case.preview.extra_thumbnails.420_300}}">
+<img src="{{case.preview.extra_thumbnails.100_100}}"><br>
 {{LANGUAGE_CODE}}
 {{MEDIA_URL}}
 {% endfor %}
