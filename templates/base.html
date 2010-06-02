@@ -31,7 +31,7 @@
 		    <ul class="menu">
 		        <li><a href="/" class="parent"><span>首页</span></a></li>
 		        {% for menu in navigation_top %}
-		        <li {% if forloop.last %} class="last"{% endif %}><a href="{% url studiocontents.views.content menu.slug %}"><span>{{ menu.title }}</span></a>
+		        <li  class="{% if forloop.last %}last {% endif %}{% if menu.slug %}current {% endif %}"><a href="{% url studiocontents.views.content menu.slug %}"><span>{{ menu.title }}</span></a>
 		            {% if menu.navigation_set.all %}
 		            <div>
 		            <ul>
@@ -51,13 +51,13 @@
 {% endblock %}
 
 <div id="footer"><div class="limiter clear-block">
-      <div class="footer-links"><a href="/contact" title="">Contact</a> / <a href="/credits" title="">Photo credits</a></div>
+      <div class="footer-links">{% for menu in navigation_bottom %}<a href="{% url studiocontents.views.content menu.slug %}" title="">{{ menu.title }}</a> {% if not forloop.last %}/{% endif %} {% endfor %}&nbsp;</div>
       <div class="advertise-link"><a href="/showcase">案例展示</a></div>
       <div class="trademark-link"><a href="/trademark">Drupal trademark policy</a></div>
   </div></div><!-- /#footer -->
 
   <div id='legal'><div class='limiter clear-block'>
-    &copy; 2010  &bull; 岩创网络 <a href="http://www.miibeian.gov.cn">京ICP备1233456</a>.  </div></div>
+    &copy; 2010  &bull; 岩创网络 <a href="http://www.miibeian.gov.cn">京ICP备05002219号-5</a>.  </div></div>
 
     <script type="text/javascript" src="/media/js/base.js"></script>
 <script type="text/javascript">
