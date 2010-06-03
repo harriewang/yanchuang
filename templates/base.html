@@ -32,7 +32,7 @@
 		    <ul class="menu">
 		        <li><a href="/" class="parent"><span>首页</span></a></li>
 		        {% for menu in navigation_top %}
-		        <li  class="{% if forloop.last %}last {% endif %}{% ifequal menu.slug content.slug %}current {% endifequal %}"><a href="{% url studiocontents.views.content menu.slug %}"><span>{{ menu.title }}</span></a>
+		        <li  class="{% if forloop.last %}last {% endif %}{% if menu.slug in request.path %}current {% endif %}"><a href="{% url studiocontents.views.content menu.slug %}"><span>{{ menu.title }}</span></a>
 		            {% if menu.navigation_set.all %}
 		            <div>
 		            <ul>
