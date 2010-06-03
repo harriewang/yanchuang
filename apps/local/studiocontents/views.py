@@ -3,6 +3,7 @@
 from django.shortcuts import render_to_response,get_object_or_404
 from django.template import RequestContext
 from models import *
+from django.core.paginator import Paginator, InvalidPage, EmptyPage
 
 
 def test(request):
@@ -31,6 +32,19 @@ def content(request, navigation_slug):
 	
 def cases(request):
 	cases = Case.objects.all()
+	paginator = Paginator(cases, 10) #show 10 cases per page
+	
+	# Make sure page request is an int. If not, deliver first page
+	try:
+	    page = int(request.GET.get('page', '1'))
+	except ValueError:
+	    page = 1
+	
+	# If page request is out of range, deliver last page.    
+	try:
+	    cases = paginator.page(page)
+	except (EmptyPage, InvalidPage):
+	    cases = paginator.page(paginator.num_pages)
 	
 	return render_to_response(
 		'cases.html',

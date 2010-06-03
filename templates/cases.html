@@ -14,7 +14,7 @@
 			<div id='main' class='clear-block'>
 				<div id="node-33" class="node clear-block ">
 					<div class="node-content clear-block">
-						{% for case in cases %}
+						{% for case in cases.object_list %}
 						<div class="case-list">
 						<h3><a href="{{case.url}}">{{ case.name }}</a></h3>
 						<img src="{{ case.preview.thumbnail }}" /><br/>
@@ -22,6 +22,18 @@
 						</div>
 						{% endfor %}
 					</div>
+				</div>
+				<div class="pagination">
+				    <span class="step-links">
+				        {% if cases.has_previous %}
+				            <a href="?page={{ cases.previous_page_number }}">上一页</a>
+				        {% endif %}
+				        <span class="current_page">
+				            第 {{ cases.number }} 页，共 {{ cases.paginator.num_pages }} 页
+				        {% if cases.has_next %}
+				            <a href="?page={{ cases.next_page_number }}">下一页</a>
+				        {% endif %}
+				    </span>
 				</div>
 			</div>
 		</div>
