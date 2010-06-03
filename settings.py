@@ -110,7 +110,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
 	
 	# External
-	'tinymce',
+	#'tinymce',
 	'sorl.thumbnail',
 	
     # Local    
@@ -120,7 +120,7 @@ INSTALLED_APPS = (
 )
 
 # TinyMCE Config
-from settings_tinymce import *
+#from settings_tinymce import *
 
 
 # Finally load the local settings if there's any

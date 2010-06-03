@@ -15,7 +15,7 @@ def index(request):
 	
 	return render_to_response(
 		'index.html',
-		{'cases':cases },
+		{'cases':cases},
 		context_instance = RequestContext(request)
 	)
 	
@@ -25,7 +25,7 @@ def content(request, navigation_slug):
 	
 	return render_to_response(
 		'content.html',
-		{'context':content},
+		{'content':content},
 		context_instance = RequestContext(request)
 	)
 	

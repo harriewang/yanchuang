@@ -1,3 +1,4 @@
+{% load i18n %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 <head>
@@ -31,7 +32,7 @@
 		    <ul class="menu">
 		        <li><a href="/" class="parent"><span>首页</span></a></li>
 		        {% for menu in navigation_top %}
-		        <li  class="{% if forloop.last %}last {% endif %}{% if menu.slug %}current {% endif %}"><a href="{% url studiocontents.views.content menu.slug %}"><span>{{ menu.title }}</span></a>
+		        <li  class="{% if forloop.last %}last {% endif %}{% ifequal menu.slug content.slug %}current {% endifequal %}"><a href="{% url studiocontents.views.content menu.slug %}"><span>{{ menu.title }}</span></a>
 		            {% if menu.navigation_set.all %}
 		            <div>
 		            <ul>
@@ -53,7 +54,7 @@
 <div id="footer"><div class="limiter clear-block">
       <div class="footer-links">{% for menu in navigation_bottom %}<a href="{% url studiocontents.views.content menu.slug %}" title="">{{ menu.title }}</a> {% if not forloop.last %}/{% endif %} {% endfor %}&nbsp;</div>
       <div class="advertise-link"><a href="/showcase">案例展示</a></div>
-      <div class="trademark-link"><a href="/trademark">Drupal trademark policy</a></div>
+      <div class="trademark-link"><a href="/sitemap">{% trans '站点地图' %}</a> / <a href="/law_statement">{% trans '法律声明' %}</a></div>
   </div></div><!-- /#footer -->
 
   <div id='legal'><div class='limiter clear-block'>
