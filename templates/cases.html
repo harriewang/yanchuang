@@ -1,5 +1,10 @@
 {% extends "base.html" %}
-
+{% block head-script %}
+<script type="text/javascript" src="/media/js/thickbox/thickbox.js"></script>
+{% endblock %}
+{% block head-style %}
+<link rel="stylesheet" href="/media/js/thickbox/thickbox.css" type="text/css" media="screen" />
+{% endblock %}
 {% block content%}
 <div id='header'>
 	<div class='limiter clear-block'>
@@ -11,19 +16,25 @@
 		<div class='page-content clear-block'>
 		<!-- Right sidebar -->
 		<!-- Content region -->
-			<div id='main' class='clear-block'>
-				<div id="node-33" class="node clear-block ">
-					<div class="node-content clear-block">
-						{% for case in cases.object_list %}
-						<div class="case-list">
-						<h3><a href="{{case.url}}">{{ case.name }}</a></h3>
-						<img src="{{ case.preview.thumbnail }}" /><br/>
-						<span>{{ case.description }}</span>
+			<div id='main' class=' clear-block'>
+				<div class="view view-dc-ads view-id-dc_ads view-display-id-block_1 view-dom-id-4" style="border:0;"> 
+					<div class="view-content">
+						<div class="item-list">
+							<ul>
+								{% for case in cases.object_list %}
+								<li class="views-row {% if forloop.last %}views-row-last{% endif %} {% if forloop.first %}views-row-first{% endif %}" style="height:180px;">  
+									<div class="views-field-field-image-fid">
+										<span class="field-content">  <a href="/media/{{case.preview}}?TB_iframe=true" title="{{case.name}}" class="thickbox thickbox-preview screenshot"><img src="{{ case.preview.thumbnail }}" alt="{{ case.name }}" title="{{ case.name }}"  class="imagecache imagecache-240x160 imagecache-default imagecache-240x160_default" width="240" height="160" /></a></span>
+									</div>
+								</li>
+								{% endfor %}
+							</ul>
 						</div>
-						{% endfor %}
 					</div>
+					
 				</div>
-				<div class="pagination">
+				<div class="pagination" style="width:300px;padding-left:30px;clear:both;">
+				    <br/><br/>
 				    <span class="step-links">
 				        {% if cases.has_previous %}
 				            <a href="?page={{ cases.previous_page_number }}">上一页</a>
@@ -36,34 +47,7 @@
 				    </span>
 				</div>
 			</div>
-		</div>
-		<div id="block-views-dc_ads-block_1" class="block block-views">
-			<div class="content">
-				<div class="view view-dc-ads view-id-dc_ads view-display-id-block_1 view-dom-id-4"> 
-					<div class="view-content">
-						<div class="item-list">
-							<ul>
-								<li class="views-row views-row-1 views-row-odd views-row-first">  
-									<div class="views-field-field-image-fid">
-										<span class="field-content">  <a href="http://www.drupalgardens.com" target="_blank"><img src="http://www.drupal.com/sites/default/files/imagecache/240x160/drupalgardens.jpg" alt="" title=""  class="imagecache imagecache-240x160 imagecache-default imagecache-240x160_default" width="240" height="160" /></a></span>
-									</div>
-								</li>
-								<li class="views-row views-row-2 views-row-even">  
-									<div class="views-field-field-image-fid">
-										<span class="field-content">  <a href="http://www.wearepropeople.com" target="_blank"><img src="http://www.drupal.com/sites/default/files/imagecache/240x160/propeople_banner.jpg" alt="" title=""  class="imagecache imagecache-240x160 imagecache-default imagecache-240x160_default" width="240" height="160" /></a></span>
-									</div>
-								</li>
-								<li class="views-row views-row-3 views-row-odd views-row-last">  
-									<div class="views-field-field-image-fid">
-										<span class="field-content">  <a href="http://www.siteground.com/special_offers/drupal_promo.htm?referrerid=148921" target="_blank"><img src="http://www.drupal.com/sites/default/files/imagecache/240x160/siteground april 2010.jpg" alt="" title=""  class="imagecache imagecache-240x160 imagecache-default imagecache-240x160_default" width="240" height="160" /></a></span>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="view-footer"><a href="/about-ads">What do these ads pay for?</a></div>
-				</div>
-			</div>
+			<p><br><br><br><br><br><br></p>
 		</div>
 		<div class='village'></div>
 	</div>

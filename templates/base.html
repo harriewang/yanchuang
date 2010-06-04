@@ -20,9 +20,17 @@
 	<!--for inline CSS style-->
 	{% endblock %}
 	
+	<script type="text/javascript" src="/media/js/base.js"></script>
+	<script type="text/javascript">
+	<!--//--><![CDATA[//><!--
+	jQuery.extend(Drupal.settings, { "basePath": "/" });
+	//--><!]]>
+	</script>
+	<script type="text/javascript" src="/media/js/menu.js"></script>
 	{% block head-script %}
 	<!--For Javascript-->
 	{% endblock %}
+	
 </head>
 <body class="drupalcom not-logged-in page-frontpage no-sidebars">
 <div id='navigation'>
@@ -57,16 +65,9 @@
       <div class="trademark-link"><a href="/sitemap">{% trans '站点地图' %}</a> / <a href="/law_statement">{% trans '法律声明' %}</a></div>
   </div></div><!-- /#footer -->
 
-  <div id='legal'><div class='limiter clear-block'>
-    &copy; 2010  &bull; 岩创网络 <a href="http://www.miibeian.gov.cn">京ICP备05002219号-5</a>.  </div></div>
-
-    <script type="text/javascript" src="/media/js/base.js"></script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-jQuery.extend(Drupal.settings, { "basePath": "/" });
-//--><!]]>
-</script>
-<script type="text/javascript" src="/media/js/menu.js"></script>
+<div id='legal'>
+	<div class='limiter clear-block'>&copy; 2010  &bull; 岩创网络 <a href="http://www.miibeian.gov.cn">京ICP备05002219号-5</a>.</div>
+</div>
 <a href="http://apycom.com/" style="display:none;"></a>
 </body>
 </html>
