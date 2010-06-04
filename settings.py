@@ -114,6 +114,7 @@ INSTALLED_APPS = (
 	# External
 	#'tinymce',
 	'sorl.thumbnail',
+	'south',
 	
     # Local    
     'studioconfigs',

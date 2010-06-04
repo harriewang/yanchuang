@@ -5,8 +5,6 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import get_language
 
-# Import tinymce models
-from tinymce import models as tinymce_models
 from sorl.thumbnail.fields import ImageWithThumbnailsField
 
 
@@ -29,8 +27,8 @@ class Navigation(models.Model):
 	title_zh_cn   = models.CharField(_('Navigation Title_CN'), max_length=100)
 	
 	# Navigation content, use tinymce's HTMLField instead of django's TextField 
-	content_en    = tinymce_models.HTMLField(_('Content_EN'), blank=True)
-	content_zh_cn = tinymce_models.HTMLField(_('Content_CN'))
+	content_en    = models.TextField(_('Content_EN'), blank=True)
+	content_zh_cn = models.TextField(_('Content_CN'))
 
 	# Navigation position, determin navigation display on the top or bottom navigation
 	position      = models.CharField(_('Navigation Position'), max_length=100, choices=POSITION_CHOICES, blank=True)
@@ -40,7 +38,7 @@ class Navigation(models.Model):
 	
 	class Meta:
 		verbose_name_plural = _('Studio Navigations')
-		
+    		
 	@property
 	def title(self):
 		"""Get title by current language"""
@@ -67,8 +65,8 @@ class News(models.Model):
 	title_en      = models.CharField(_('News Title_EN'), max_length=200, blank=True)
 	title_zh_cn   = models.CharField(_('News Title_CN'), max_length=200)
 	news_type     = models.CharField(_('News Type'), max_length=100, choices=NEWS_TYPE_CHOICES)
-	content_en    = tinymce_models.HTMLField(_('News Content_EN'), blank=True)
-	content_zh_cn = tinymce_models.HTMLField(_('News Content_CN'))
+	content_en    = models.TextField(_('News Content_EN'), blank=True)
+	content_zh_cn = models.TextField(_('News Content_CN'))
 	create_time   = models.DateTimeField(_('Create Time'), default=datetime.datetime.now())
 	active        = models.BooleanField(_('Actived'), default=True)
 
@@ -109,6 +107,7 @@ class Case(models.Model):
 	)
 	complete_time       = models.DateField(_('Complete Time'))
 	active              = models.BooleanField(_('Actived'), default=True)
+	weight              = models.IntegerField(_('Weight'), default=0 )
 	
 	class Meta:
 		verbose_name_plural = _('Studio Cases')
