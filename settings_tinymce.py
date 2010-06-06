@@ -1,4 +1,4 @@
-#coding:utf8
+#coding:utf-8
 """This is a TinyMCE config, we can import this to project's settings.py """
 
 import os

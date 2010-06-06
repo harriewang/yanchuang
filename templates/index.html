@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load placeholders_tags %}
+{% load placeholders_tags i18n %}
 {% block content%}
 <div id='header'><div class='limiter clear-block'>
       <div id="block-views-dc_header-block_1" class="block block-views">
@@ -31,7 +31,7 @@
 		</div>
 		<div class='matrix-caption matrix-caption-1 clear-block'> 
 			<div class="views-field-body">
-				<div class="field-content">岩创有专业的团队承接 <strong>企业网站</strong> 建设.</div>
+				<div class="field-content">{% blocktrans %}YanCreate have a professional team to build <strong>enterprise website<strong>.{% endblocktrans %}{#岩创有专业的团队承接企业网站建设.#}</div>
 			</div>
 		</div>
 	</div>
@@ -164,7 +164,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="view-footer"><a href="/showcase">查看更多的案例</a></div>
+				<div class="view-footer"><a href="/showcase">{% trans "More cases..."%}{#查看更多案例#}</a></div>
 			</div>
 		</div>
 	</div>

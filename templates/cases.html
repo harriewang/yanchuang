@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% block head-script %}
 <script type="text/javascript" src="/media/js/thickbox/thickbox.js"></script>
 {% endblock %}
@@ -22,7 +23,7 @@
 						<div class="item-list">
 							<ul>
 								{% for case in cases.object_list %}
-								<li class="views-row {% if forloop.last %}views-row-last{% endif %} {% if forloop.first %}views-row-first{% endif %}" style="height:180px;">  
+								<li class="views-row {% if forloop.last %}views-row-last{% endif %} {% if forloop.first %}views-row-first{% endif %}" style="height:180px;border-width:10px 10px 0;">  
 									<div class="views-field-field-image-fid">
 										<span class="field-content">  <a href="/media/{{case.preview}}?TB_iframe=true" title="{{case.name}}" class="thickbox thickbox-preview screenshot"><img src="{{ case.preview.thumbnail }}" alt="{{ case.name }}" title="{{ case.name }}"  class="imagecache imagecache-240x160 imagecache-default imagecache-240x160_default" width="240" height="160" /></a></span>
 									</div>
@@ -31,21 +32,23 @@
 							</ul>
 						</div>
 					</div>
-					
 				</div>
-				<div class="pagination" style="width:300px;padding-left:30px;clear:both;">
+				
+				<!--Pagination-->
+				<div class="pagination">
 				    <br/><br/>
 				    <span class="step-links">
 				        {% if cases.has_previous %}
-				            <a href="?page={{ cases.previous_page_number }}">上一页</a>
+				            <a href="?page={{ cases.previous_page_number }}">&lt;&lt; {% trans "Previous"%}{#上一页#} </a>
 				        {% endif %}
 				        <span class="current_page">
-				            第 {{ cases.number }} 页，共 {{ cases.paginator.num_pages }} 页
+				            &nbsp;{{ cases.number }}/{{ cases.paginator.num_pages }}&nbsp;
 				        {% if cases.has_next %}
-				            <a href="?page={{ cases.next_page_number }}">下一页</a>
+				            <a href="?page={{ cases.next_page_number }}"> {% trans "Next" %}{#下一页#} &gt;&gt;</a>
 				        {% endif %}
 				    </span>
 				</div>
+				<!--End Pagination-->
 			</div>
 			<p><br><br><br><br><br><br></p>
 		</div>

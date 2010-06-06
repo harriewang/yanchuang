@@ -26,12 +26,29 @@
 	<!--//--><![CDATA[//><!--
 	jQuery.extend(Drupal.settings, { "basePath": "/" });
 	//--><!]]>
+	</script>
+	<script type="text/javascript">
+	    // Use language_code in javascript
+	    var LANGUAGE_CODE = '{{ LANGUAGE_CODE }}'
 	
-	// Set language
+	    // Set language
 		function setlang(language) {
 			$('#setlang input[name=language]').val(language); //get the selected language
+			//alert($('#setlang input[name=language]').val());
 			$('#setlang').submit(); //submit to /i18n/setlang/
 		}
+		
+		$(document).ready(function() {
+		    // when hover between languages, add diffrent class to it.
+		    $('#languages>p>a').hover(
+		        function() {
+		            $(this).addClass('current_lang');
+		        },
+		        function() {
+		            $(this).removeClass('current_lang');
+		        }
+		    ); 
+		});
 	</script>
 	
 
@@ -46,7 +63,7 @@
     	<a href="/" class="logo active">岩创网络</a>
     	<div id="menu" style="float:left;margin-left:60px;">
 		    <ul class="menu">
-		        <li><a href="/" class="parent"><span>首页</span></a></li>
+		        <li><a href="/" class="parent"><span>{% trans "Home" %}{#首页#}</span></a></li>
 		        {% for menu in navigation_top %}
 		        <li  class="{% if forloop.last %}last {% endif %}{% if menu.slug in request.path %}current {% endif %}"><a href="{% url studiocontents.views.content menu.slug %}"><span>{{ menu.title }}</span></a>
 		            {% if menu.navigation_set.all %}
@@ -61,19 +78,22 @@
 		        {% endfor %}
 		    </ul>
 		</div>
+		
 		<!--Switch language-->
 		<div id="languages">
 			<form id="setlang" action="/i18n/setlang/" method="post">
-				<input name="next" type="hidden" value="{{ request.path }}">
-				<input name="language" type="hidden" value="">
+				<input name="next" type="hidden" value="{{ request.path }}" />
+				<input name="language" type="hidden" value="" />
 			</form>
+			<p>{% trans "Languages:" %}</p>
 			<p id="switch-languages">
 				{% for language in LANGUAGES %}
-				<a href="javascript:void(0)" {% if language.0 == LANGUAGE_CODE %}class="current_lang"{% endif %} onlick="setlang({{ language.0 }})">{{ language.1 }}</a> {% if not forloop.last %}| {% endif %}
+				<a href="javascript:void(0)" onclick="setlang('{{ language.0 }}')">{{ language.1 }}</a>&nbsp;&nbsp;{% if not forloop.last %}|&nbsp;&nbsp;{% endif %}
 				{% endfor %}
 			</p>
 		</div>
 		<!--End switch language-->
+		
     </div>
 </div>
 {% block content %}
@@ -82,12 +102,12 @@
 
 <div id="footer"><div class="limiter clear-block">
       <div class="footer-links">{% for menu in navigation_bottom %}<a href="{% url studiocontents.views.content menu.slug %}" title="">{{ menu.title }}</a> {% if not forloop.last %}/{% endif %} {% endfor %}&nbsp;</div>
-      <div class="advertise-link"><a href="/showcase">案例展示</a></div>
-      <div class="trademark-link"><a href="/sitemap">{% trans '站点地图' %}</a> / <a href="/law_statement">{% trans '法律声明' %}</a></div>
+      <div class="advertise-link"><a href="/showcase">{% trans "Case Show" %}{#案例展示#}</a></div>
+      <div class="trademark-link"><a href="/sitemap">{% trans 'Sitemap' %}{#网站地图#}</a> / <a href="/law_statement">{% trans 'Law Acknowledge' %}{#法律声明#}</a></div>
   </div></div><!-- /#footer -->
 
 <div id='legal'>
-	<div class='limiter clear-block'>&copy; 2010  &bull; 岩创网络 <a href="http://www.miibeian.gov.cn">京ICP备05002219号-5</a>.</div>
+	<div class='limiter clear-block'>{% trans "&copy; 2010  &bull; YanCreate Network" %}{#&copy; 2010  &bull; 岩创网络#} <a href="http://www.miibeian.gov.cn">京ICP备05002219号-5</a>.</div>
 </div>
 <a href="http://apycom.com/" style="display:none;"></a>
 </body>
