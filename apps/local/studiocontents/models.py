@@ -107,7 +107,7 @@ class Case(models.Model):
 	)
 	complete_time       = models.DateField(_('Complete Time'))
 	active              = models.BooleanField(_('Actived'), default=True)
-	weight              = models.IntegerField(_('Weight'), default=0 )
+	#weight              = models.IntegerField(_('Weight'), default=0 )
 	
 	class Meta:
 		verbose_name_plural = _('Studio Cases')
