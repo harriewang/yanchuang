@@ -1,4 +1,4 @@
-# coding:utf8
+# coding:utf-8
 
 from django.shortcuts import render_to_response,get_object_or_404
 from django.template import RequestContext
@@ -14,9 +14,15 @@ def index(request):
 	
 	cases = Case.objects.all()
 	
+	# Get latest five news.
+	news = News.objects.filter(active=True)[:5]
+	
 	return render_to_response(
 		'index.html',
-		{'cases':cases},
+		{
+		    'cases': cases,
+		    'news' : news,
+		},
 		context_instance = RequestContext(request)
 	)
 	
@@ -32,7 +38,7 @@ def content(request, navigation_slug):
 	
 def cases(request):
 	cases = Case.objects.all()
-	paginator = Paginator(cases, 8) #show 8 cases per page
+	paginator = Paginator(cases, 9) #show 8 cases per page
 	
 	# Make sure page request is an int. If not, deliver first page
 	try:
