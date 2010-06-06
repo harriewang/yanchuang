@@ -21,12 +21,20 @@
 	{% endblock %}
 	
 	<script type="text/javascript" src="/media/js/base.js"></script>
+	<script type="text/javascript" src="/media/js/menu.js"></script>
 	<script type="text/javascript">
 	<!--//--><![CDATA[//><!--
 	jQuery.extend(Drupal.settings, { "basePath": "/" });
 	//--><!]]>
+	
+	// Set language
+		function setlang(language) {
+			$('#setlang input[name=language]').val(language); //get the selected language
+			$('#setlang').submit(); //submit to /i18n/setlang/
+		}
 	</script>
-	<script type="text/javascript" src="/media/js/menu.js"></script>
+	
+
 	{% block head-script %}
 	<!--For Javascript-->
 	{% endblock %}
@@ -53,6 +61,19 @@
 		        {% endfor %}
 		    </ul>
 		</div>
+		<!--Switch language-->
+		<div id="languages">
+			<form id="setlang" action="/i18n/setlang/" method="post">
+				<input name="next" type="hidden" value="{{ request.path }}">
+				<input name="language" type="hidden" value="">
+			</form>
+			<p id="switch-languages">
+				{% for language in LANGUAGES %}
+				<a href="javascript:void(0)" {% if language.0 == LANGUAGE_CODE %}class="current_lang"{% endif %} onlick="setlang({{ language.0 }})">{{ language.1 }}</a> {% if not forloop.last %}| {% endif %}
+				{% endfor %}
+			</p>
+		</div>
+		<!--End switch language-->
     </div>
 </div>
 {% block content %}

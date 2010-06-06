@@ -10,6 +10,10 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
     (r'^showcase/$','studiocontents.views.cases'),
     (r'(?P<navigation_slug>[a-z0-9-_]+)/$','studiocontents.views.content'),
+    
+    # i18n
+    (r'i18n/', include('django.conf.urls.i18n')),
+    
     # Example:
     # (r'^yanchuang/', include('yanchuang.foo.urls')),
 
