@@ -209,7 +209,7 @@
             
             function move(el) {
                 $back.each(function() {
-                    $.dequeue(this, "fx"); }
+                    $(this).dequeue("fx"); }
                 ).animate({
                     width: el.offsetWidth,
                     left: el.offsetLeft
