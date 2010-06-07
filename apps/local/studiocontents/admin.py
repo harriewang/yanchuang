@@ -1,6 +1,6 @@
 #coding:utf-8
 from django.contrib import admin
-from models import Navigation, News, Case
+from models import *
 from django.utils.translation import get_language
 
 class NavigationInline(admin.TabularInline):
@@ -18,8 +18,12 @@ class NewsAdmin(admin.ModelAdmin):
 	list_filter    = ('news_type', 'create_time', 'active',)
 
 class CaseAdmin(admin.ModelAdmin):
-	list_display = ('name_%s' % get_language().replace('-','_'), 'url', 'preview', 'complete_time',)
+	list_display = ('name_%s' % get_language().replace('-','_'), 'url', 'preview', 'complete_time', 'case_category',)
+	
+class CaseCategoryAdmin(admin.ModelAdmin):
+	pass
 
 admin.site.register(Navigation, NavigationAdmin)
 admin.site.register(News, NewsAdmin)
 admin.site.register(Case, CaseAdmin)
+admin.site.register(Case_Category, CaseCategoryAdmin)

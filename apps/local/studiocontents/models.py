@@ -84,10 +84,33 @@ class News(models.Model):
 
 	def __unicode__(self):
 		return self.title
+
+class Case_Category(models.Model):
+	"""Case categories"""
+	slug              = models.SlugField(max_length=100, unique=True, help_text=_('Letters, numbers, undersocres and hyphens only.'))
+	name_en           = models.CharField(_('Category Name_EN'), max_length=100, unique=True)
+	name_zh_cn        = models.CharField(_('Category Name_CN'), max_length=100, unique=True)
+	description_en    = models.TextField(_('Category Description_EN'), blank=True)
+	description_zh_cn = models.TextField(_('Category Description_CN'), blank=True)
+	
+	class Meta:
+		verbose_name_plural = _('Case Categories')
+	
+	@property
+	def name(self):
+		return getattr(self, 'name_%s' % get_language().replace('-','_'))
+	
+	def __unicode__(self):
+		return self.name
+	
 		
 class Case(models.Model):
 	"""Studio Case"""
 	slug                = models.SlugField(max_length=100, unique=True, help_text=_('Letters, numbers, undersocres and hyphens only.'))
+	
+	# Case category
+	case_category       = models.ForeignKey(Case_Category, verbose_name=_('Case Category'), blank=True, null=True)
+	
 	name_en             = models.CharField(_('Case Name_EN'), max_length=100, blank=True)
 	name_zh_cn          = models.CharField(_('Case Name_CN'), max_length=100)
 	description_en      = models.TextField(_('Case Description_EN'), blank=True)
