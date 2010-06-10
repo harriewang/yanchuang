@@ -37,7 +37,8 @@ def content(request, navigation_slug):
 	)
 	
 def cases(request):
-	cases = Case.objects.all()
+	#cases = Case.objects.all()
+	cases = Case.objects.filter(active=True)
 	paginator = Paginator(cases, 9) #show 8 cases per page
 	
 	# Make sure page request is an int. If not, deliver first page
