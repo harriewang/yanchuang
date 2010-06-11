@@ -1,172 +1,73 @@
 {% extends "base.html" %}
 {% load placeholders_tags i18n %}
 {% block content%}
-<div id='header'><div class='limiter clear-block'>
-      <div id="block-views-dc_header-block_1" class="block block-views">
+<script>
+$('#nav_home').addClass('active');
+</script>
+ <section id="content">
 
-  <div class="content">
-    <div id='coda-slider' class='csw'>
-<div class="panelContainer view view-dc-header view-id-dc_header view-display-id-block_1 view-dom-id-3">
+          {% listne "about_us" LANGUAGE_CODE as about_us %}
+	      {% box about_us|join:'-' %}
 
-  
-  <div class='panel' title='中小企业网站建设'>
-	{#<a href="#" class="ahah-refresh">Next</a>#}
-	<div class="view-content">
-		<div class="matrix clear-block">
-			<div class='left clear-block'>
-				<div class="matrix-item item-0"><img src="/media/cases/yugongwang_png_100x100_crop_q85.jpg" alt="" title=""  width="100" height="100" /></div>
-				<div class="matrix-item item-1"><img src="/media/cases/liverpool_png_100x100_crop_q85.jpg" alt="" title=""  width="100" height="100" /></div>
-				<div class="matrix-item item-2"><img src="/media/cases/shhrpx_png_240x160_crop_q85.jpg" alt="" title=""  width="210" height="190" /></div>
-			</div>
-			<div class='center clear-block'>
-				<div class="matrix-item item-0"><img src="/media/cases/yugongwang_png_420x300_q85.jpg" alt="" title=""  width="420" height="300" /><div class='image-caption'></div></div>
-			</div>
-			<div class='right clear-block'>
-				<div class="matrix-item item-0"><img src="/media/cases/shhrpx_png_210x80_crop_q85.jpg" alt="" title=""  width="210" height="80" /></div>
-				<div class="matrix-item item-1"><img src="/media/cases/microcall_png_100x100_crop_q85.jpg" alt="" title=""  width="100" height="100" /></div>
-				<div class="matrix-item item-2"><img src="/media/cases/pinzui_png_100x100_crop_q85.jpg" alt="" title=""  width="100" height="100" /></div>
-				<div class="matrix-item item-3"><img src="/media/cases/shhrpx_png_100x100_crop_q85.jpg" alt="" title=""  width="100" height="100" /></div>
-				<div class="matrix-item item-4"><img src="/media/cases/uol_png_100x100_crop_q85.jpg" alt="" title=""  width="100" height="100" /></div>
-			</div>
-		</div>
-		<div class='matrix-caption matrix-caption-1 clear-block'> 
-			<div class="views-field-body">
-				<div class="field-content">{% blocktrans %}YanCreate have a professional team to build <strong>enterprise website<strong>.{% endblocktrans %}{#岩创有专业的团队承接企业网站建设.#}</div>
-			</div>
-		</div>
-	</div>
-</div>
+          <section class="floatBoxes">
+            <h1>{%trans "Show Cases"%}</h1>
 
-  
-  
-<div title='500强案例展示' style="display:none">
+            <article>
+              <a href="/showcase">
+                <img src="{{ cases.0.preview.thumbnail }}" />
+                <h1>{{ cases.0.name }}</h1>
+                <p>{{ cases.0.description|safe|truncatewords:"10" }}</p>
+              </a>
+            </article>
 
-  {#<a href="#" class="ahah-refresh">Next</a>#}
-    
-<div class="view-content">
-      <div class="matrix clear-block">
-		<div class='left clear-block'>
-			<div class="matrix-item item-0"><img src="http://yanchuang.zozs.com/media/cases/tomorrowscareer_png_100x100_crop_q85.jpg" alt="" title=""  width="100" height="100" /></div>
-			<div class="matrix-item item-1"><img src="/media/cases/mediamarkt_png_100x100_crop_q85.jpg" alt="" title=""  width="100" height="100" /></div>
-			<div class="matrix-item item-2"><img src="/media/cases/tomorrowscareer_png_240x160_crop_q85.jpg" alt="" title=""  width="210" height="190" /></div>
-		</div>
-		<div class='center clear-block'>
-			<div class="matrix-item item-0"><img src="/media/cases/joinyum_png_420x300_q85.jpg" alt="" title=""  width="420" height="300" /><div class='image-caption'></div></div>
-		</div>
-		<div class='right clear-block'>
-			<div class="matrix-item item-0"><img src="/media/cases/tomorrowscareer_png_210x80_crop_q85.jpg" alt="" title=""  width="210" height="80" /></div>
-			<div class="matrix-item item-1"><img src="/media/cases/joinyum_png_100x100_crop_q85.jpg" alt="" title=""  width="100" height="100" /></div>
-			<div class="matrix-item item-2"><img src="/media/cases/novartis_png_100x100_crop_q85.jpg" alt="" title=""  width="100" height="100" /></div>
-			<div class="matrix-item item-3"><img src="/media/cases/workatstarbucks_png_100x100_crop_q85.jpg" alt="" title=""  width="100" height="100" /></div>
-			<div class="matrix-item item-4"><img src="/media/cases/neverstopgrowing_png_100x100_crop_q85.jpg" alt="" title=""  width="100" height="100" /></div>
-		</div>
-	</div>
-<div class='matrix-caption matrix-caption-1 clear-block'>
-    
-  <div class="views-field-body">
-                <div class="field-content">岩创为 <a href="#/fortune-500">世界五百强</a> 建设品牌网站.
-</div>
-  </div>
-</div>
-</div>
-</div>
+            <article>
+              <a href="/showcase">
+                <img src="{{ cases.1.preview.thumbnail }}" />
+                <h1>{{ cases.1.name }}</h1>
+                <p>{{ cases.1.description|safe|truncatewords:"10" }}</p>
+              </a>
+            </article>
 
-  
+            <article class="last">
+              <a href="/showcase">
+                <img src="{{ cases.2.preview.thumbnail }}" />
+                <h1>{{ cases.2.name }}</h1>
+                <p>{{ cases.2.description|safe|truncatewords:"10" }}</p>
+              </a>
+            </article>
+          </section>
 
-  
- <div class='panel' title='旗下网站'>
+          <section class="newsList">
+            <h1>{%trans "Company News"%}</h1>
+			{% for news in news %}
+            <article>
+              <h1><a href="#">{{news.title}}</a></h1>
+              <p>{{news.content}}</p>
+            </article>
+            {% endfor %}
+            
+          </section>
 
-  {#<a href="#" class="ahah-refresh">Next</a>#}
-    
-  
-      <div class="view-content">
-	<div class="matrix clear-block">
-		<div class='left clear-block'>
-			<div class="matrix-item item-0"><img src="/media/cases/yugongwang_png_100x100_crop_q85.jpg" alt="" title=""  width="100" height="100" /></div>
-			<div class="matrix-item item-1"><img src="/media/cases/mediamarkt_png_100x100_crop_q85.jpg" alt="" title=""  width="100" height="100" /></div>
-			<div class="matrix-item item-2"><img src="/media/cases/shhrpx_png_240x160_crop_q85.jpg" alt="" title=""  width="210" height="190" /></div>
-		</div>
-		<div class='center clear-block'>
-			<div class="matrix-item item-0"><img src="/media/cases/pinzui_png_420x300_q85.jpg" alt="" title=""  width="420" height="300" /><div class='image-caption'></div></div>
-		</div>
-		<div class='right clear-block'>
-			<div class="matrix-item item-0"><img src="/media/cases/shhrpx_png_210x80_crop_q85.jpg" alt="" title=""  width="210" height="80" /></div>
-			<div class="matrix-item item-1"><img src="/media/cases/microcall_png_100x100_crop_q85.jpg" alt="" title=""  width="100" height="100" /></div>
-			<div class="matrix-item item-2"><img src="/media/cases/pinzui_png_100x100_crop_q85.jpg" alt="" title=""  width="100" height="100" /></div>
-			<div class="matrix-item item-3"><img src="/media/cases/shhrpx_png_100x100_crop_q85.jpg" alt="" title=""  width="100" height="100" /></div>
-			<div class="matrix-item item-4"><img src="/media/cases/uol_png_100x100_crop_q85.jpg" alt="" title=""  width="100" height="100" /></div>
-		</div>
-	</div>
-<div class='matrix-caption matrix-caption-1 clear-block'>
-    
-  <div class="views-field-body">
-                <div class="field-content">岩创网络旗下 <strong>网站</strong>.</div>
-  </div>
-</div>
-    </div>
-  
-  
-  
-  
-  
-  </div>
+        </section>
+{% endblock %}
+{% block sidebar%}
+<aside id="sidebar">
+<nav class="navMenu">
+	<h1>{%trans 'Services'%}</h1>
 
-  
+	<ul>
+		<li><a href="service/">网站页面设计</a></li>
+		<li><a href="service/">网站系统开发</a></li>
+		<li><a href="service/">服务器部署维护</a></li>
+		<li><a href="service/">定制改造开源系统</a></li>
+	</ul>
+</nav>  
+<h1>{% trans 'Quick Contact' %}</h1>
 
-</div></div>
-  </div>
-</div>
+<address>
+		{% listne "sidebar_contact" LANGUAGE_CODE as sidebar_contact %}
+	    {% box sidebar_contact|join:'-' %}
+</address>
 
-          </div></div>
-  
-<div id="page"><div class='limiter clear-block'>
-
-    
-	<div class='page-content clear-block'>
-	
-	      <!-- Right sidebar -->
-	      
-	      <!-- Content region -->
-	      <div id='main' class='clear-block'>
-	        <div class='mission'>
-	        	{% listne "about_us" LANGUAGE_CODE as about_us %}
-	        	{% box about_us|join:'-' %}
-	        </div>
-	        <div class='site-links clear-block'>
-	            <ul class="links primary-links">
-	            	<li class="groups first"><a href="http://site.yancreate.com" title="企业网站生成平台" target="_blank"><span class='icon'></span><strong>site</strong>.yancreate.com<span class='description'>企业网站生成平台</span></a></li><li class="planet"><a href="http://tellceo.yancreate.com" title="企业快捷沟通平台，企业微博客" target="_blank"><span class='icon'></span><strong>tellceo</strong>.yancreate.com<span class='description'>企业快捷沟通平台，企业微博客</span></a></li><li class="drupal last"><a href="http://yancreate.com" title="网站建设 + 网络品牌建设" target="_blank"><span class='icon'></span>Email：<strong>harrie</strong>@yancreate.com<span class='description'>品牌网站建设 + 网站网络推广</span></a></li>
-	            </ul>
-			</div>
-		</div>
-	</div>
-	<div id="block-views-dc_ads-block_1" class="block block-views">
-		<div class="content">
-			<div class="view view-dc-ads view-id-dc_ads view-display-id-block_1 view-dom-id-4"> 
-				<div class="view-content">
-					<div class="item-list">
-						<ul>
-							<li class="views-row views-row-1 views-row-odd views-row-first">  
-								<div class="views-field-field-image-fid">
-									<span class="field-content">  <a href="{{cases.0.url }}" target="_blank"><img src="{{ cases.0.preview.thumbnail }}" alt="" title=""  class="imagecache imagecache-240x160 imagecache-default imagecache-240x160_default" alt="{{ cases.0.name }}" width="240" height="160" /></a></span>
-								</div>
-							</li>
-							<li class="views-row views-row-2 views-row-even">  
-								<div class="views-field-field-image-fid">
-									<span class="field-content">  <a href="{{cases.1.url }}" target="_blank"><img src="{{ cases.1.preview.thumbnail }}" alt="" title=""  class="imagecache imagecache-240x160 imagecache-default imagecache-240x160_default" alt="{{ cases.1.name }} width="240" height="160" /></a></span>
-								</div>
-							</li>
-							<li class="views-row views-row-3 views-row-odd views-row-last">  
-								<div class="views-field-field-image-fid">
-									<span class="field-content">  <a href="{{cases.2.url }}" target="_blank"><img src="{{ cases.2.preview.thumbnail }}" alt="{{ cases.2.name }}" title="{{ cases.2.name }}"  class="imagecache imagecache-240x160 imagecache-default imagecache-240x160_default" width="240" height="160" /></a></span>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="view-footer"><a href="/showcase">{% trans "More cases..."%}{#查看更多案例#}</a></div>
-			</div>
-		</div>
-	</div>
- 	<div class='village'></div>
-</div></div><!-- /#page -->
+</aside>
 {% endblock %}

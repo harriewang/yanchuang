@@ -12,7 +12,7 @@ def test(request):
 	
 def index(request):
 	
-	cases = Case.objects.all()
+	cases = Case.objects.filter(active=True)
 	
 	# Get latest five news.
 	news = News.objects.filter(active=True)[:5]
@@ -37,9 +37,9 @@ def content(request, navigation_slug):
 	)
 	
 def cases(request):
-	#cases = Case.objects.all()
 	cases = Case.objects.filter(active=True)
-	paginator = Paginator(cases, 9) #show 8 cases per page
+	
+	paginator = Paginator(cases, 8) #show 8 cases per page
 	
 	# Make sure page request is an int. If not, deliver first page
 	try:
@@ -52,10 +52,15 @@ def cases(request):
 	    cases = paginator.page(page)
 	except (EmptyPage, InvalidPage):
 	    cases = paginator.page(paginator.num_pages)
+	# get category list
+	cases_categories = Case_Category.objects.all()
 	
 	return render_to_response(
 		'cases.html',
-		{'cases':cases},
+		{
+			'cases'				:cases,
+			'cases_categories'	:cases_categories,
+		},
 		context_instance = RequestContext(request)
 	)
 		

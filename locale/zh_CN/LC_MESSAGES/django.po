@@ -5,15 +5,20 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Alpha 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-06 19:21+0800\n"
-"PO-Revision-Date: 2010-06-06 19:25+0800\n"
-"Last-Translator: zhoujialiang <zhoujialiang@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2010-06-11 12:01+0800\n"
+"PO-Revision-Date: 2010-06-11 12:02+0830\n"
+"Last-Translator: Harrie <harrie@yancreate.com>\n"
+"Language-Team: Yan Chuang Network <contact@yancreate.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 #: apps/external/tinymce/views.py:67
 msgid "Error running spellchecker"
@@ -30,7 +35,7 @@ msgstr ""
 
 #: apps/local/placeholders/models.py:10
 msgid "Placeholder Description"
-msgstr "占位符描述"
+msgstr ""
 
 #: apps/local/placeholders/models.py:11
 #: apps/local/placeholders/models.py:28
@@ -38,7 +43,7 @@ msgstr "占位符描述"
 #: apps/local/studioconfigs/models.py:54
 #: apps/local/studiocontents/models.py:37
 #: apps/local/studiocontents/models.py:71
-#: apps/local/studiocontents/models.py:109
+#: apps/local/studiocontents/models.py:132
 msgid "Actived"
 msgstr ""
 
@@ -52,14 +57,15 @@ msgstr ""
 
 #: apps/local/placeholders/models.py:25
 msgid "Box Description"
-msgstr "Box描述"
+msgstr ""
 
 #: apps/local/placeholders/models.py:26
 msgid "Box Content"
-msgstr "Box内容"
+msgstr ""
 
 #: apps/local/placeholders/models.py:27
 #: apps/local/studioconfigs/models.py:51
+#: apps/local/studiocontents/models.py:133
 msgid "Weight"
 msgstr ""
 
@@ -69,39 +75,39 @@ msgstr ""
 
 #: apps/local/studioconfigs/models.py:11
 msgid "Stuido Title_EN"
-msgstr "网站英文名称"
+msgstr ""
 
 #: apps/local/studioconfigs/models.py:12
 msgid "Studio Title_CN"
-msgstr "网站中文名称"
+msgstr ""
 
 #: apps/local/studioconfigs/models.py:15
 msgid "Studio Description_EN"
-msgstr "网站英文描述"
+msgstr ""
 
 #: apps/local/studioconfigs/models.py:16
 msgid "Studio Description_CN"
-msgstr "网站中文描述"
+msgstr ""
 
 #: apps/local/studioconfigs/models.py:19
 msgid "Site Keywords"
-msgstr "网站关键词"
+msgstr ""
 
 #: apps/local/studioconfigs/models.py:25
 msgid "Studio Configs"
-msgstr " 工作室设置"
+msgstr ""
 
 #: apps/local/studioconfigs/models.py:42
 msgid "Friend Link Title"
-msgstr "友情链接名称"
+msgstr ""
 
 #: apps/local/studioconfigs/models.py:45
 msgid "Friend Link URL"
-msgstr "友情链接地址"
+msgstr ""
 
 #: apps/local/studioconfigs/models.py:48
 msgid "Friend Link Description"
-msgstr "友情链接描述"
+msgstr ""
 
 #: apps/local/studioconfigs/models.py:51
 msgid "The friend link's weight, fill in numbers please."
@@ -109,7 +115,7 @@ msgstr ""
 
 #: apps/local/studioconfigs/models.py:58
 msgid "Friend Links"
-msgstr " 友情链接"
+msgstr ""
 
 #: apps/local/studiocontents/models.py:15
 msgid "Top"
@@ -122,6 +128,7 @@ msgstr ""
 #: apps/local/studiocontents/models.py:20
 #: apps/local/studiocontents/models.py:64
 #: apps/local/studiocontents/models.py:90
+#: apps/local/studiocontents/models.py:109
 msgid "Letters, numbers, undersocres and hyphens only."
 msgstr ""
 
@@ -143,11 +150,11 @@ msgstr ""
 
 #: apps/local/studiocontents/models.py:30
 msgid "Content_EN"
-msgstr "动态内容（英文）"
+msgstr ""
 
 #: apps/local/studiocontents/models.py:31
 msgid "Content_CN"
-msgstr "动态内容（中文）"
+msgstr ""
 
 #: apps/local/studiocontents/models.py:34
 msgid "Navigation Position"
@@ -155,77 +162,109 @@ msgstr ""
 
 #: apps/local/studiocontents/models.py:40
 msgid "Studio Navigations"
-msgstr " 网站导航"
+msgstr ""
 
 #: apps/local/studiocontents/models.py:59
 msgid "News"
-msgstr "新闻"
+msgstr ""
 
 #: apps/local/studiocontents/models.py:60
 msgid "In Progress"
-msgstr "进行中"
+msgstr ""
 
 #: apps/local/studiocontents/models.py:61
 msgid "Done"
-msgstr "已完成"
+msgstr ""
 
 #: apps/local/studiocontents/models.py:65
 msgid "News Title_EN"
-msgstr "动态名称（英文）"
+msgstr ""
 
 #: apps/local/studiocontents/models.py:66
 msgid "News Title_CN"
-msgstr "动态名称（中文）"
+msgstr ""
 
 #: apps/local/studiocontents/models.py:67
 msgid "News Type"
-msgstr "动态类型"
+msgstr ""
 
 #: apps/local/studiocontents/models.py:68
 msgid "News Content_EN"
-msgstr "动态内容（英文）"
+msgstr ""
 
 #: apps/local/studiocontents/models.py:69
 msgid "News Content_CN"
-msgstr "动态内容（中文）"
+msgstr ""
 
 #: apps/local/studiocontents/models.py:70
 msgid "Create Time"
-msgstr "创建日期"
+msgstr ""
 
 #: apps/local/studiocontents/models.py:74
 msgid "Studio News"
-msgstr "工作室动态"
+msgstr ""
 
 #: apps/local/studiocontents/models.py:91
-msgid "Case Name_EN"
+msgid "Category Name_EN"
 msgstr ""
 
 #: apps/local/studiocontents/models.py:92
-msgid "Case Name_CN"
+msgid "Category Name_CN"
 msgstr ""
 
 #: apps/local/studiocontents/models.py:93
-msgid "Case Description_EN"
-msgstr "案例描述（英文）"
+msgid "Category Description_EN"
+msgstr ""
 
 #: apps/local/studiocontents/models.py:94
-msgid "Case Description_CN"
-msgstr "案例描述（中文）"
+msgid "Category Description_CN"
+msgstr ""
 
-#: apps/local/studiocontents/models.py:95
+#: apps/local/studiocontents/models.py:97
+msgid "Case Categories"
+msgstr ""
+
+#: apps/local/studiocontents/models.py:112
+msgid "Case Category"
+msgstr ""
+
+#: apps/local/studiocontents/models.py:114
+msgid "Case Name_EN"
+msgstr ""
+
+#: apps/local/studiocontents/models.py:115
+msgid "Case Name_CN"
+msgstr ""
+
+#: apps/local/studiocontents/models.py:116
+msgid "Case Description_EN"
+msgstr ""
+
+#: apps/local/studiocontents/models.py:117
+msgid "Case Description_CN"
+msgstr ""
+
+#: apps/local/studiocontents/models.py:118
 msgid "Case URL"
 msgstr ""
 
-#: apps/local/studiocontents/models.py:108
+#: apps/local/studiocontents/models.py:131
 msgid "Complete Time"
-msgstr "完成日期"
+msgstr ""
 
-#: apps/local/studiocontents/models.py:113
+#: apps/local/studiocontents/models.py:136
 msgid "Studio Cases"
-msgstr "案例"
+msgstr ""
 
-#: templates/base.html:66
+#: templates/base.html:38
+msgid "Yan Chuang Network"
+msgstr "岩创网络"
+
+#: templates/base.html:39
+msgid "We build websites around the world"
+msgstr "我们为全世界建设网站"
+
+#: templates/base.html:47
 #: templates/admin/500.html:4
 #: templates/admin/app_index.html:8
 #: templates/admin/base.html:54
@@ -246,41 +285,64 @@ msgstr "案例"
 msgid "Home"
 msgstr "首页"
 
-#: templates/base.html:88
-msgid "Languages:"
-msgstr "语言："
+#: templates/base.html:55
+msgid "Quick Navigation"
+msgstr "网站导航"
 
-#: templates/base.html:105
-msgid "Case Show"
-msgstr "案例展示"
+#: templates/base.html:58
+msgid "Homepage"
+msgstr "首页"
 
-#: templates/base.html:106
+#: templates/base.html:59
 msgid "Sitemap"
 msgstr "网站地图"
 
-#: templates/base.html:106
-msgid "Law Acknowledge"
-msgstr "法律声明"
+#: templates/base.html:60
+msgid "Contact"
+msgstr "联系信息"
 
-#: templates/base.html:110
-msgid "&copy; 2010  &bull; YanCreate Network"
-msgstr "&copy; 2010  &bull; 岩创网络"
+#: templates/base.html:63
+msgid "Languages:"
+msgstr "语言"
 
-#: templates/cases.html:42
+#: templates/base.html:99
+msgid "&copy; Yan Chuang Network 2010, All rights reserved."
+msgstr "&copy; 岩创网络 2010, 版权所有"
+
+#: templates/cases.html:15
+#: templates/index.html:13
+msgid "Show Cases"
+msgstr "案例展示"
+
+#: templates/cases.html:29
 msgid "Previous"
-msgstr "上一页"
+msgstr ""
 
-#: templates/cases.html:47
+#: templates/cases.html:34
 msgid "Next"
 msgstr "下一页"
 
-#: templates/index.html:34
-msgid "YanCreate have a professional team to build <strong>enterprise website<strong>."
-msgstr "岩创有专业的团队承接<strong>企业网站</strong>建设."
+#: templates/cases.html:42
+msgid "Case Type"
+msgstr "案例类型"
 
-#: templates/index.html:167
-msgid "More cases..."
-msgstr "查看更多案例"
+#: templates/cases.html:51
+#: templates/content.html:31
+#: templates/index.html:65
+msgid "Quick Contact"
+msgstr "联系信息"
+
+#: templates/content.html:13
+msgid "Navigation"
+msgstr "网站导航"
+
+#: templates/index.html:41
+msgid "Company News"
+msgstr "公司新闻"
+
+#: templates/index.html:56
+msgid "Services"
+msgstr "服务项目"
 
 #: templates/admin/404.html:4
 #: templates/admin/404.html.py:8
@@ -473,7 +535,7 @@ msgstr ""
 
 #: templates/admin/object_history.html:22
 msgid "Date/time"
-msgstr "日期/时间"
+msgstr ""
 
 #: templates/admin/object_history.html:23
 msgid "User"
@@ -695,21 +757,4 @@ msgstr ""
 #: templates/studio/base.html:43
 msgid "上海岩创网络科技有限公司"
 msgstr ""
-
-#~ msgid "news"
-#~ msgstr "新闻"
-#~ msgid "doing"
-#~ msgstr "进行中"
-#~ msgid "done"
-#~ msgstr "已完成"
-#~ msgid "Studio Config"
-#~ msgstr "工作室设置"
-#~ msgid "Friend Link"
-#~ msgstr "友情链接"
-#~ msgid "News Date"
-#~ msgstr "动态日期"
-
-#, fuzzy
-#~ msgid "Studio_Configs"
-#~ msgstr "工作室设置"
 

@@ -1,114 +1,123 @@
 {% load i18n %}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/media/css/basic.css" media="screen" >
+    <link rel="stylesheet" type="text/css" href="/media/css/layout.css" media="screen, print">
     <meta name="description" content="{{STUDIO_INFO.description}}" />
 	<meta name="keywords" content="{{STUDIO_INFO.keywords}}" />
 	<title>{% block head-title %}{{STUDIO_INFO.title}}{% endblock %}</title>
 	{% block head-link %}
-	<!--For css file-->
-	<link type="text/css" rel="stylesheet" media="all" href="/media/css/base.css" />
-    <!--[if lt IE 7]>
-    <style type="text/css" media="all">@import "{{MEDIA_URL}}css/ie6.css";</style>
-    <![endif]-->
-    <!-- Initialize each slider on the page. Each slider must have a unique id -->
-    <link type="text/css" href="{{MEDIA_URL}}css/menu.css" rel="stylesheet" />
 	{% endblock %}
 	
 	{% block head-style %}
 	<!--for inline CSS style-->
 	{% endblock %}
-	
-	<script type="text/javascript" src="/media/js/base.js"></script>
-	<script type="text/javascript" src="/media/js/menu.js"></script>
-	<script type="text/javascript">
-	<!--//--><![CDATA[//><!--
-	jQuery.extend(Drupal.settings, { "basePath": "/" });
-	//--><!]]>
-	</script>
-	<script type="text/javascript">
+    <!--[if IE]>
+      <script type="text/javascript" src="/media/js/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript">
 	    // Use language_code in javascript
 	    var LANGUAGE_CODE = '{{ LANGUAGE_CODE }}'
-	
-	    // Set language
-		function setlang(language) {
-			$('#setlang input[name=language]').val(language); //get the selected language
-			//alert($('#setlang input[name=language]').val());
-			$('#setlang').submit(); //submit to /i18n/setlang/
-		}
-		
-		$(document).ready(function() {
-		    // when hover between languages, add diffrent class to it.
-		    $('#languages>p>a').hover(
-		        function() {
-		            $(this).addClass('current_lang');
-		        },
-		        function() {
-		            $(this).removeClass('current_lang');
-		        }
-		    ); 
-		});
-	</script>
-	
-
+    </script>
+    <script type="text/javascript" src="/media/js/basic.js"></script>
 	{% block head-script %}
 	<!--For Javascript-->
 	{% endblock %}
-	
 </head>
-<body class="drupalcom not-logged-in page-frontpage no-sidebars">
-<div id='navigation'>
-	<div class='limiter clear-block'>
-    	<a href="/" class="logo active">岩创网络</a>
-    	<div id="menu" style="float:left;margin-left:60px;">
-		    <ul class="menu">
-		        <li><a href="/" class="parent"><span>{% trans "Home" %}{#首页#}</span></a></li>
-		        {% for menu in navigation_top %}
-		        <li  class="{% if forloop.last %}last {% endif %}{% if menu.slug in request.path %}current {% endif %}"><a href="{% url studiocontents.views.content menu.slug %}"><span>{{ menu.title }}</span></a>
-		            {% if menu.navigation_set.all %}
-		            <div>
-		            <ul>
-		                {% for sub_menu in menu.navigation_set.all %}
-		                <li><a href="{% url studiocontents.views.content sub_menu.slug %}"><span>{{ sub_menu.title }}</span></a></li>
-		                {% endfor %}
-		            </ul></div>
-		            {% endif %}
+<body>
+
+    <div id="background">
+      <div id="wrapper">
+
+        <header id="header">
+
+          <hgroup class="logo">
+            <h1><a href="/" title="Back to homepage"><img src="/media/img/logo.gif" alt="{%trans 'Yan Chuang Network'%}"></a></h1>
+            <h2>{%trans 'We build websites around the world'%}</h2>
+          </hgroup>
+
+          <nav>
+            <h2 class="hidden">Navigation</h2>
+
+            <div id="mainMenu">
+              <ul>
+                <li  id="nav_home"><a href="/"><span>{% trans "Home" %}</span></a></li>
+                {% for menu in navigation_top %}
+		        <li {% if menu.slug in request.path %}class="active"{% endif %}><a href="{% url studiocontents.views.content menu.slug %}"><span>{{ menu.title }}</span></a>
 		        </li>
 		        {% endfor %}
-		    </ul>
-		</div>
-		
-		<!--Switch language-->
-		<div id="languages">
-			<form id="setlang" action="/i18n/setlang/" method="post">
-				<input name="next" type="hidden" value="{{ request.path }}" />
-				<input name="language" type="hidden" value="" />
-			</form>
-			<p>{% trans "Languages:" %}</p>
-			<p id="switch-languages">
-				{% for language in LANGUAGES %}
-				<a href="javascript:void(0)" onclick="setlang('{{ language.0 }}')">{{ language.1 }}</a>&nbsp;&nbsp;{% if not forloop.last %}|&nbsp;&nbsp;{% endif %}
-				{% endfor %}
-			</p>
-		</div>
-		<!--End switch language-->
-		
-    </div>
-</div>
+              </ul>
+            </div>
+
+            <h2 class="hidden">{% trans "Quick Navigation" %}</h2>
+
+            <ul id="quickNav">
+              <li class="home"><a href="/" title="{%trans 'Homepage' %}"><span>{%trans 'Homepage' %}</span></a></li>
+              <li class="map"><a href="/sitemap" title="{%trans 'Sitemap' %}"><span>{%trans 'Sitemap' %}</span></a></li>
+              <li class="contact"><a href="/contact" title="{%trans 'Contact' %}"><span>{%trans 'Contact' %}</span></a></li>
+            </ul>
+
+            <h2 class="hidden">{% trans "Languages:" %}</h2>
+            <ul id="lang">
+              {% for language in LANGUAGES %}
+              <li class="{% ifequal language.0 'zh-cn'%}cn{%else%}{{ language.0 }}{% endifequal %}"><a href="javascript:void(0)" onclick="setlang('{{ language.0 }}')" title="{{ language.1 }}"><span></span>{{ language.0 }}</a></li>
+              {% endfor %}
+            </ul>
+            
+          </nav>
+		<form id="setlang" action="/i18n/setlang/" method="post" class="hidden">
+			<input name="next" type="hidden" value="{{ request.path }}" />
+			<input name="language" type="hidden" value="" />
+		</form>
+
+          <form action="./" style="visibility:hidden;">
+            <fieldset>
+              <legend>Search</legend>
+              <input type="search" class="text" name="search" title="Enter search word or phrase">
+              <input type="submit" class="submit" value="Search">
+            </fieldset>
+          </form>
+
+        </header>
+
 {% block content %}
 这里是网页内容，使用其他模板时，将网页内容放到这里面。
 {% endblock %}
-
-<div id="footer"><div class="limiter clear-block">
-      <div class="footer-links">{% for menu in navigation_bottom %}<a href="{% url studiocontents.views.content menu.slug %}" title="">{{ menu.title }}</a> {% if not forloop.last %}/{% endif %} {% endfor %}&nbsp;</div>
-      <div class="advertise-link"><a href="/showcase">{% trans "Case Show" %}{#案例展示#}</a></div>
-      <div class="trademark-link"><a href="/sitemap">{% trans 'Sitemap' %}{#网站地图#}</a> / <a href="/law_statement">{% trans 'Law Acknowledge' %}{#法律声明#}</a></div>
-  </div></div><!-- /#footer -->
-
-<div id='legal'>
-	<div class='limiter clear-block'>{% trans "&copy; 2010  &bull; YanCreate Network" %}{#&copy; 2010  &bull; 岩创网络#} <a href="http://www.miibeian.gov.cn">京ICP备05002219号-5</a>.</div>
+{% block sidebar%}
+这里是右侧内容，使用其他模版时，把右侧内容放到这里
+{% endblock %}
 </div>
-<a href="http://apycom.com/" style="display:none;"></a>
+</div>
+
+<footer id="footer">
+  <div class="width">
+    <p class="copyright">
+      <small>
+        {% trans "&copy; Yan Chuang Network 2010, All rights reserved." %}
+      </small>
+    </p>
+
+    <p class="cms">
+      <small>
+        This <abbr title="Content-management System">CMS</abbr> was developed by <a href="./">yancreate.com</a>. <a href="http://www.miibeian.gov.cn">京ICP备05002219号-5</a>
+      </small>
+    </p>
+
+    <div id="linkbuilding">
+      <ul>
+      	{% for menu in navigation_bottom %}
+      	<li>
+      		<a href="{% url studiocontents.views.content menu.slug %}" title="{{ menu.title }}">{{ menu.title }}</a>
+      	</li>	
+      	{% endfor %}
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
 </body>
 </html>

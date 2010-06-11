@@ -1,32 +1,39 @@
 {% extends "base.html" %}
-
+{% load placeholders_tags i18n %}
 {% block content%}
-<div id='header'>
-	<div class='limiter clear-block'>
-		<h1 class='page-title'>{{ content.title }}</h1>
-	</div>
-</div>
-<div id="page">
-	<div class='limiter clear-block'>
-		<div class='page-content clear-block'>
-		<!-- Right sidebar -->
-		<!-- Content region -->
-			<div id='main' class='clear-block'>
-				<div id="node-33" class="node clear-block ">
-					<div class="node-content clear-block">
-						<p>{{ content.content|safe }}</p>
-					</div>
-					<p>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="village"></div>
-	</div>
-</div><!-- /#page -->
+<section id="content">
+	<h1>{{ content.title }}</h1>
+	<p>{{ content.content|safe }}</p>
+</section>
+{% endblock %}
+
+{% block sidebar%}
+<aside id="sidebar">
+	<nav class="navMenu">
+		<h1>{%trans 'Navigation'%}</h1>
+
+		<ul>
+			{% for menu in navigation_top %}
+	            {% if menu.navigation_set.all %}
+	                {% if menu.slug in request.path %}
+	                {% for sub_menu in menu.navigation_set.all %}
+	                <li><a href="{% url studiocontents.views.content sub_menu.slug %}">{{ sub_menu.title }}</a></li>
+	                {% endfor %}
+	                {% else %}
+	                <script>$('.navMenu').hide();</script>
+	                {% endif %}
+	            {% endif %}
+	        </li>
+	        {% endfor %}
+		</ul>
+	</nav>
+	
+	<h1>{%trans 'Quick Contact'%}</h1>
+
+	<address>
+		{% listne "sidebar_contact" LANGUAGE_CODE as sidebar_contact %}
+	    {% box sidebar_contact|join:'-' %}
+	</address>
+  
+</aside>
 {% endblock %}
