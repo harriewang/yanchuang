@@ -136,12 +136,13 @@ ul#lang li.fr a span               { background-position: -70px 0; }
 /* * * * * *  floats cases  * * * * * */
 .floatCases                        { width: 100%; margin: 2em 0; }
 .floatCases:after                  { display: block; clear: both; content: " "; }
-.floatCases article                { display: inline; float: left; width: 260px; height:220px; margin: 0 30px 40px 0; background: #eee; }
+.floatCases article                { display: inline; float: left; width: 100%; height:180px; margin: 0 30px 40px 0; background: #eee; }
 .floatCases article.last           { margin-right: 0; }
 .floatCases article a              { display: block; padding: 10px 10px 10px; color: black; text-decoration: none; }
-.floatCases article a:hover        { background: #ddd; }
-.floatCases article a h1           { margin: 0 0 10px; font-size: 1.166em; font-weight: bold; text-align: center; }
-.floatCases article a p            { margin: 0; }
+/*.floatCases article a:hover        { background: #ddd; }*/
+.floatCases article a h1           { margin: 0 0 10px; font-size: 1.166em; font-weight: bold; text-align:left; float:right; width: 55%;}
+.floatCases article a img          {float:left;}
+.floatCases article a p            { margin: 0; float:right; width: 55%;}
 
 
 /* * * * * *  news list  * * * * * */

@@ -18,7 +18,7 @@
               <a href="/media/{{case.preview}}?TB_iframe=true" title="{{case.name}}" class="thickbox">
                 <img src="{{ case.preview.thumbnail }}" />
                 <h1>{{case.name}}</h1>
-                <p>{{ cases.description|safe|truncatewords:"10" }}</p>
+                <p>{{ case.description|escape|slice:":140" }}</p>
               </a>
             </article>
 			{% endfor %}
