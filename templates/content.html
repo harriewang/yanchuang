@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load placeholders_tags i18n %}
+{% block head-title %}{{ content.title }} - {{STUDIO_INFO.title}}{% endblock %}
 {% block content%}
 <section id="content">
 	<h1>{{ content.title }}</h1>
