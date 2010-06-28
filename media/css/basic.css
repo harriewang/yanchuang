@@ -6,7 +6,7 @@
  *
  * * */
 
-html                    { font: 75%/150% Arial, Helvetica, sans-serif; }
+html                    { font: 12px/20px "Helvetica Neue",Arial,sans-serif; }
 
 abbr                    { border-bottom: dotted 1px; border-color: inherit; cursor: help; }
 address                 { margin: 1em 0; font-style: normal; }
