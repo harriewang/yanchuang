@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Alpha 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-11 12:01+0800\n"
+"POT-Creation-Date: 2010-07-07 15:47+0800\n"
 "PO-Revision-Date: 2010-06-11 12:02+0830\n"
 "Last-Translator: Harrie <harrie@yancreate.com>\n"
 "Language-Team: Yan Chuang Network <contact@yancreate.com>\n"
@@ -28,19 +28,18 @@ msgstr ""
 msgid "Placeholder Name"
 msgstr ""
 
-#: apps/local/placeholders/models.py:9
-#: apps/local/placeholders/models.py:24
-msgid "Used as a hook in the template (Letters, numbers, underscores and hyphens only)."
+#: apps/local/placeholders/models.py:9 apps/local/placeholders/models.py:24
+msgid ""
+"Used as a hook in the template (Letters, numbers, underscores and hyphens "
+"only)."
 msgstr ""
 
 #: apps/local/placeholders/models.py:10
 msgid "Placeholder Description"
 msgstr ""
 
-#: apps/local/placeholders/models.py:11
-#: apps/local/placeholders/models.py:28
-#: apps/local/studioconfigs/models.py:22
-#: apps/local/studioconfigs/models.py:54
+#: apps/local/placeholders/models.py:11 apps/local/placeholders/models.py:28
+#: apps/local/studioconfigs/models.py:22 apps/local/studioconfigs/models.py:54
 #: apps/local/studiocontents/models.py:37
 #: apps/local/studiocontents/models.py:71
 #: apps/local/studiocontents/models.py:132
@@ -63,8 +62,7 @@ msgstr ""
 msgid "Box Content"
 msgstr ""
 
-#: apps/local/placeholders/models.py:27
-#: apps/local/studioconfigs/models.py:51
+#: apps/local/placeholders/models.py:27 apps/local/studioconfigs/models.py:51
 #: apps/local/studiocontents/models.py:133
 msgid "Weight"
 msgstr ""
@@ -137,7 +135,9 @@ msgid "Parent Navigation"
 msgstr ""
 
 #: apps/local/studiocontents/models.py:23
-msgid "Choose a parent navigation, leave it empty if you want to add a top navigaiton"
+msgid ""
+"Choose a parent navigation, leave it empty if you want to add a top "
+"navigaiton"
 msgstr ""
 
 #: apps/local/studiocontents/models.py:26
@@ -164,17 +164,17 @@ msgstr ""
 msgid "Studio Navigations"
 msgstr ""
 
-#: apps/local/studiocontents/models.py:59
+#: apps/local/studiocontents/models.py:59 templates/index.html:44
 msgid "News"
-msgstr ""
+msgstr "公司新闻"
 
-#: apps/local/studiocontents/models.py:60
+#: apps/local/studiocontents/models.py:60 templates/index.html:44
 msgid "In Progress"
-msgstr ""
+msgstr "进行中"
 
-#: apps/local/studiocontents/models.py:61
+#: apps/local/studiocontents/models.py:61 templates/index.html:44
 msgid "Done"
-msgstr ""
+msgstr "已完成"
 
 #: apps/local/studiocontents/models.py:65
 msgid "News Title_EN"
@@ -264,16 +264,12 @@ msgstr "岩创网络"
 msgid "We build websites around the world"
 msgstr "我们为全世界建设网站"
 
-#: templates/base.html:47
-#: templates/admin/500.html:4
-#: templates/admin/app_index.html:8
-#: templates/admin/base.html:54
-#: templates/admin/change_form.html:17
-#: templates/admin/change_list.html:25
+#: templates/base.html:47 templates/admin/500.html:4
+#: templates/admin/app_index.html:8 templates/admin/base.html:54
+#: templates/admin/change_form.html:17 templates/admin/change_list.html:25
 #: templates/admin/delete_confirmation.html:6
 #: templates/admin/delete_selected_confirmation.html:6
-#: templates/admin/invalid_setup.html:4
-#: templates/admin/object_history.html:6
+#: templates/admin/invalid_setup.html:4 templates/admin/object_history.html:6
 #: templates/admin/auth/user/change_password.html:10
 #: templates/registration/logged_out.html:4
 #: templates/registration/password_change_done.html:4
@@ -309,30 +305,31 @@ msgstr "语言"
 msgid "&copy; Yan Chuang Network 2010, All rights reserved."
 msgstr "&copy; 岩创网络 2010, 版权所有"
 
-#: templates/cases.html:15
-#: templates/index.html:13
+#: templates/cases.html:3
+msgid "Show cases"
+msgstr "案例展示"
+
+#: templates/cases.html:16 templates/index.html:13
 msgid "Show Cases"
 msgstr "案例展示"
 
-#: templates/cases.html:29
+#: templates/cases.html:30
 msgid "Previous"
 msgstr ""
 
-#: templates/cases.html:34
+#: templates/cases.html:35
 msgid "Next"
 msgstr "下一页"
 
-#: templates/cases.html:42
+#: templates/cases.html:43
 msgid "Case Type"
 msgstr "案例类型"
 
-#: templates/cases.html:51
-#: templates/content.html:31
-#: templates/index.html:65
+#: templates/cases.html:52 templates/content.html:32 templates/index.html:65
 msgid "Quick Contact"
 msgstr "联系信息"
 
-#: templates/content.html:13
+#: templates/content.html:14
 msgid "Navigation"
 msgstr "网站导航"
 
@@ -344,8 +341,23 @@ msgstr "公司新闻"
 msgid "Services"
 msgstr "服务项目"
 
-#: templates/admin/404.html:4
-#: templates/admin/404.html.py:8
+#: templates/index.html:59
+msgid "Web Design"
+msgstr "网站页面设计"
+
+#: templates/index.html:60
+msgid "Website Content Management"
+msgstr "网站系统开发"
+
+#: templates/index.html:61
+msgid "Business Systems"
+msgstr "电子商务网站开发"
+
+#: templates/index.html:62
+msgid "Online Stores (e-commerce)"
+msgstr "在线商店"
+
+#: templates/admin/404.html:4 templates/admin/404.html.py:8
 msgid "Page not found"
 msgstr ""
 
@@ -366,7 +378,9 @@ msgid "Server Error <em>(500)</em>"
 msgstr ""
 
 #: templates/admin/500.html:10
-msgid "There's been an error. It's been reported to the site administrators via e-mail and should be fixed shortly. Thanks for your patience."
+msgid ""
+"There's been an error. It's been reported to the site administrators via e-"
+"mail and should be fixed shortly. Thanks for your patience."
 msgstr ""
 
 #: templates/admin/actions.html:4
@@ -377,8 +391,7 @@ msgstr ""
 msgid "Go"
 msgstr ""
 
-#: templates/admin/app_index.html:10
-#: templates/admin/index.html:19
+#: templates/admin/app_index.html:10 templates/admin/index.html:19
 #, python-format
 msgid "%(name)s"
 msgstr ""
@@ -415,13 +428,11 @@ msgstr ""
 msgid "Django administration"
 msgstr ""
 
-#: templates/admin/change_form.html:20
-#: templates/admin/index.html:29
+#: templates/admin/change_form.html:20 templates/admin/index.html:29
 msgid "Add"
 msgstr ""
 
-#: templates/admin/change_form.html:27
-#: templates/admin/object_history.html:10
+#: templates/admin/change_form.html:27 templates/admin/object_history.html:10
 msgid "History"
 msgstr ""
 
@@ -431,8 +442,7 @@ msgstr ""
 msgid "View on site"
 msgstr ""
 
-#: templates/admin/change_form.html:38
-#: templates/admin/change_list.html:54
+#: templates/admin/change_form.html:38 templates/admin/change_list.html:54
 #: templates/admin/auth/user/change_password.html:23
 msgid "Please correct the error below."
 msgid_plural "Please correct the errors below."
@@ -455,12 +465,17 @@ msgstr ""
 
 #: templates/admin/delete_confirmation.html:16
 #, python-format
-msgid "Deleting the %(object_name)s '%(escaped_object)s' would result in deleting related objects, but your account doesn't have permission to delete the following types of objects:"
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would result in deleting "
+"related objects, but your account doesn't have permission to delete the "
+"following types of objects:"
 msgstr ""
 
 #: templates/admin/delete_confirmation.html:23
 #, python-format
-msgid "Are you sure you want to delete the %(object_name)s \"%(escaped_object)s\"? All of the following related items will be deleted:"
+msgid ""
+"Are you sure you want to delete the %(object_name)s \"%(escaped_object)s\"? "
+"All of the following related items will be deleted:"
 msgstr ""
 
 #: templates/admin/delete_confirmation.html:28
@@ -474,12 +489,17 @@ msgstr ""
 
 #: templates/admin/delete_selected_confirmation.html:15
 #, python-format
-msgid "Deleting the %(object_name)s would result in deleting related objects, but your account doesn't have permission to delete the following types of objects:"
+msgid ""
+"Deleting the %(object_name)s would result in deleting related objects, but "
+"your account doesn't have permission to delete the following types of "
+"objects:"
 msgstr ""
 
 #: templates/admin/delete_selected_confirmation.html:22
 #, python-format
-msgid "Are you sure you want to delete the selected %(object_name)s objects? All of the following objects and their related items will be deleted:"
+msgid ""
+"Are you sure you want to delete the selected %(object_name)s objects? All of "
+"the following objects and their related items will be deleted:"
 msgstr ""
 
 #: templates/admin/filter.html:2
@@ -517,7 +537,10 @@ msgid "Unknown content"
 msgstr ""
 
 #: templates/admin/invalid_setup.html:7
-msgid "Something's wrong with your database installation. Make sure the appropriate database tables have been created, and make sure the database is readable by the appropriate user."
+msgid ""
+"Something's wrong with your database installation. Make sure the appropriate "
+"database tables have been created, and make sure the database is readable by "
+"the appropriate user."
 msgstr ""
 
 #: templates/admin/login.html:19
@@ -550,15 +573,16 @@ msgid "DATETIME_FORMAT"
 msgstr ""
 
 #: templates/admin/object_history.html:38
-msgid "This object doesn't have a change history. It probably wasn't added via this admin site."
+msgid ""
+"This object doesn't have a change history. It probably wasn't added via this "
+"admin site."
 msgstr ""
 
 #: templates/admin/pagination.html:10
 msgid "Show all"
 msgstr ""
 
-#: templates/admin/pagination.html:11
-#: templates/admin/submit_line.html:3
+#: templates/admin/pagination.html:11 templates/admin/submit_line.html:3
 msgid "Save"
 msgstr ""
 
@@ -591,7 +615,9 @@ msgid "Save and continue editing"
 msgstr ""
 
 #: templates/admin/auth/user/add_form.html:6
-msgid "First, enter a username and password. Then, you'll be able to edit more user options."
+msgid ""
+"First, enter a username and password. Then, you'll be able to edit more user "
+"options."
 msgstr ""
 
 #: templates/admin/auth/user/add_form.html:13
@@ -647,7 +673,9 @@ msgid "Your password was changed."
 msgstr ""
 
 #: templates/registration/password_change_form.html:12
-msgid "Please enter your old password, for security's sake, and then enter your new password twice so we can verify you typed it in correctly."
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
 msgstr ""
 
 #: templates/registration/password_change_form.html:17
@@ -696,7 +724,9 @@ msgid "Enter new password"
 msgstr ""
 
 #: templates/registration/password_reset_confirm.html:14
-msgid "Please enter your new password twice so we can verify you typed it in correctly."
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
 msgstr ""
 
 #: templates/registration/password_reset_confirm.html:26
@@ -704,7 +734,9 @@ msgid "Password reset unsuccessful"
 msgstr ""
 
 #: templates/registration/password_reset_confirm.html:28
-msgid "The password reset link was invalid, possibly because it has already been used.  Please request a new password reset."
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
 msgstr ""
 
 #: templates/registration/password_reset_done.html:6
@@ -713,7 +745,9 @@ msgid "Password reset successful"
 msgstr ""
 
 #: templates/registration/password_reset_done.html:12
-msgid "We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly."
+msgid ""
+"We've e-mailed you instructions for setting your password to the e-mail "
+"address you submitted. You should be receiving it shortly."
 msgstr ""
 
 #: templates/registration/password_reset_email.html:2
@@ -743,7 +777,9 @@ msgid "The %(site_name)s team"
 msgstr ""
 
 #: templates/registration/password_reset_form.html:12
-msgid "Forgotten your password? Enter your e-mail address below, and we'll e-mail instructions for setting a new one."
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions for setting a new one."
 msgstr ""
 
 #: templates/registration/password_reset_form.html:16
@@ -757,4 +793,3 @@ msgstr ""
 #: templates/studio/base.html:43
 msgid "上海岩创网络科技有限公司"
 msgstr ""
-

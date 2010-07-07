@@ -41,7 +41,7 @@ $('#nav_home').addClass('active');
             <h1>{%trans "Company News"%}</h1>
 			{% for news in news %}
             <article>
-              <h1><a href="#">{{news.title}}</a></h1>
+              <h1><a href="#">{{news.title}}</a> <small>{%ifequal news.news_type 'news'%}{%trans "News"%}{%endifequal%}{%ifequal news.news_type 'done'%}{%trans "Done"%}{%endifequal%}{%ifequal news.news_type 'doing'%}{%trans "In Progress"%}{%endifequal%}</small></h1>
               <p>{{news.content}}</p>
             </article>
             {% endfor %}
@@ -56,10 +56,10 @@ $('#nav_home').addClass('active');
 	<h1>{%trans 'Services'%}</h1>
 
 	<ul>
-		<li><a href="service/">网站页面设计</a></li>
-		<li><a href="service/">网站系统开发</a></li>
-		<li><a href="service/">服务器部署维护</a></li>
-		<li><a href="service/">定制改造开源系统</a></li>
+		<li><a href="service/">{% trans "Web Design"%}</a></li>
+		<li><a href="service/">{% trans "Website Content Management"%}</a></li>
+		<li><a href="service/">{% trans "Business Systems"%}</a></li>
+		<li><a href="service/">{% trans "Online Stores (e-commerce)"%}</a></li>
 	</ul>
 </nav>  
 <h1>{% trans 'Quick Contact' %}</h1>
