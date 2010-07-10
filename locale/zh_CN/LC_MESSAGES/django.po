@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Alpha 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-07 15:47+0800\n"
+"POT-Creation-Date: 2010-07-10 11:30+0800\n"
 "PO-Revision-Date: 2010-06-11 12:02+0830\n"
 "Last-Translator: Harrie <harrie@yancreate.com>\n"
 "Language-Team: Yan Chuang Network <contact@yancreate.com>\n"
@@ -305,6 +305,27 @@ msgstr "语言"
 msgid "&copy; Yan Chuang Network 2010, All rights reserved."
 msgstr "&copy; 岩创网络 2010, 版权所有"
 
+#: templates/caseDetail.html:30
+msgid "Visit site"
+msgstr "访问此网站"
+
+#: templates/caseDetail.html:30
+msgid "Contact us"
+msgstr "联系我们"
+
+#: templates/caseDetail.html:30
+msgid "More cases"
+msgstr "更多案例"
+
+#: templates/caseDetail.html:37 templates/content.html:14
+msgid "Navigation"
+msgstr "网站导航"
+
+#: templates/caseDetail.html:55 templates/cases.html:52
+#: templates/content.html:32 templates/index.html:65
+msgid "Quick Contact"
+msgstr "联系信息"
+
 #: templates/cases.html:3
 msgid "Show cases"
 msgstr "案例展示"
@@ -324,14 +345,6 @@ msgstr "下一页"
 #: templates/cases.html:43
 msgid "Case Type"
 msgstr "案例类型"
-
-#: templates/cases.html:52 templates/content.html:32 templates/index.html:65
-msgid "Quick Contact"
-msgstr "联系信息"
-
-#: templates/content.html:14
-msgid "Navigation"
-msgstr "网站导航"
 
 #: templates/index.html:41
 msgid "Company News"

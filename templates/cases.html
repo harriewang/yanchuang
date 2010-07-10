@@ -16,7 +16,7 @@
             <h1>{%trans "Show Cases"%}</h1>
 			{% for case in cases.object_list %}
             <article {% if forloop.last %}class="last"{% endif %}>
-              <a href="/media/{{case.preview}}?TB_iframe=true" title="{{case.name}}" class="thickbox">
+              <a href="/case/{{case.slug}}" title="{{case.name}}">
                 <img src="{{ case.preview.thumbnail }}" />
                 <h1>{{case.name}}</h1>
                 <p>{{ case.description|escape|slice:":140" }}</p>

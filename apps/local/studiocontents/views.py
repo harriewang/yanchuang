@@ -63,5 +63,15 @@ def cases(request):
 		},
 		context_instance = RequestContext(request)
 	)
+
+def caseDetail(request, case_slug):
+	
+	case = get_object_or_404(Case, slug=case_slug)
+	
+	return render_to_response(
+		'caseDetail.html',
+		{'case':case},
+		context_instance = RequestContext(request)
+	)
 		
 	

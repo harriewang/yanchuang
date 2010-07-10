@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     # i18n
     (r'^i18n/', include('django.conf.urls.i18n')),
     
+    (r'^case/(?P<case_slug>[a-z0-9-_]+)/$','studiocontents.views.caseDetail'),
     (r'(?P<navigation_slug>[a-z0-9-_]+)/$','studiocontents.views.content'),
     
 
