@@ -63,12 +63,11 @@ var LANGUAGE_CODE = '{{ LANGUAGE_CODE }}'
 		这里是右侧内容，使用其他模版时，把右侧内容放到这里
 		{% endblock %}
 		</div>
-		<div class="right">
-		{% block content %}
-		这里是网页内容，使用其他模板时，将网页内容放到这里面。
-		{% endblock %}
-		</div>
-		<div style="clear:both"></div>
+	</div>
+	<div class="right">
+	{% block content %}
+	这里是网页内容，使用其他模板时，将网页内容放到这里面。
+	{% endblock %}
 	</div>
 	<div style="clear:both"></div>
 </div>
