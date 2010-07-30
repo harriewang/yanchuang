@@ -4,70 +4,66 @@
 <script>
 $('#nav_home').addClass('active');
 </script>
- <section id="content">
-
-          {% listne "about_us" LANGUAGE_CODE as about_us %}
-	      {% box about_us|join:'-' %}
-
-          <section class="floatBoxes">
-            <h1>{%trans "Show Cases"%}</h1>
-
-            <article>
-              <a href="/showcase">
-                <img src="{{ cases.0.preview.thumbnail }}" />
-                <h1>{{ cases.0.name }}</h1>
-                <p>{{ cases.0.description|safe|truncatewords:"10" }}</p>
-              </a>
-            </article>
-
-            <article>
-              <a href="/showcase">
-                <img src="{{ cases.1.preview.thumbnail }}" />
-                <h1>{{ cases.1.name }}</h1>
-                <p>{{ cases.1.description|safe|truncatewords:"10" }}</p>
-              </a>
-            </article>
-
-            <article class="last">
-              <a href="/showcase">
-                <img src="{{ cases.2.preview.thumbnail }}" />
-                <h1>{{ cases.2.name }}</h1>
-                <p>{{ cases.2.description|safe|truncatewords:"10" }}</p>
-              </a>
-            </article>
-          </section>
-
-          <section class="newsList">
-            <h1>{%trans "Company News"%}</h1>
-			{% for news in news %}
-            <article>
-              <h1><a href="#">{{news.title}}</a> <small>{%ifequal news.news_type 'news'%}{%trans "News"%}{%endifequal%}{%ifequal news.news_type 'done'%}{%trans "Done"%}{%endifequal%}{%ifequal news.news_type 'doing'%}{%trans "In Progress"%}{%endifequal%}</small></h1>
-              <p>{{news.content}}</p>
-            </article>
-            {% endfor %}
-            
-          </section>
-
-        </section>
+{#<div style="margin-bottom:10px;">#}
+{#<a href="###" target="_blank"><img src="images/gamebto.gif" /></a>#}
+{#<a href="###" target="_blank"><img src="images/union_bak.gif" /></a>#}
+{#</div>#}
+<div id="hoverpage">
+	{% listne "hoverpage" LANGUAGE_CODE as hoverpage %}
+	{% box hoverpage|join:'-' %}
+</div>
+<div class="leftcontent" style="margin-top:15px; height:160px;">
+	<ul>
+		<li class="title"><a href="skins.asp" style="float:right; font-size:12px; font-weight:100;">{%trans "more"%}</a>{%trans "Show Cases"%}</li>
+		{% for case in cases %}
+		<li class="case"><img src="{{ case.preview.thumbnail }}" width="80" height="91" alt="" /><br /><A HREF="/showcase/">{{ case.name|truncatewords:"1"}}</a>
+		<p class="hidden">{{ case.description|safe|truncatewords:"10" }}</p>
+		</li>
+		{% endfor %}
+	</ul>
+</div>
+<div class="leftcontent" style="margin-top:15px; height:300px;">
+	<ul>
+		<li class="title">
+			<a href="/news/" style="float:right; font-size:12px; font-weight:100;">{%trans "more"%}</a>{%trans "Company News"%}
+		</li>
+       	{% for news in news %}
+		<li style="margin-top:5px; width:100%; float:left; line-height:18px;">
+			<a href="###" target="_blank"><b>{{news.title}}</b></a>{%ifequal news.news_type 'news'%}{%trans "News"%}{%endifequal%}{%ifequal news.news_type 'done'%}{%trans "Done"%}{%endifequal%}{%ifequal news.news_type 'doing'%}{%trans "In Progress"%}{%endifequal%}</small><BR>
+			{{news.content}}
+		</li>
+		{% endfor %}
+	</ul>
+</div>
 {% endblock %}
 {% block sidebar%}
-<aside id="sidebar">
-<nav class="navMenu">
-	<h1>{%trans 'Services'%}</h1>
-
+<div style="margin-top: 15px;" class="leftcontent">
 	<ul>
-		<li><a href="service/">{% trans "Web Design"%}</a></li>
-		<li><a href="service/">{% trans "Website Content Management"%}</a></li>
-		<li><a href="service/">{% trans "Business Systems"%}</a></li>
-		<li><a href="service/">{% trans "Online Stores (e-commerce)"%}</a></li>
+		<li class="title">{%trans 'Services'%}</li>
+		<li><a href="/service/">{% trans "Web Design"%}</a></li>
+		<li><a href="/service/">{% trans "Website Content Management"%}</a></li>
+		<li><a href="/service/">{% trans "Business Systems"%}</a></li>
+		<li><a href="/service/">{% trans "Online Stores (e-commerce)"%}</a></li>
 	</ul>
-</nav>  
-<h1>{% trans 'Quick Contact' %}</h1>
-
-<address>
-		{% listne "sidebar_contact" LANGUAGE_CODE as sidebar_contact %}
-	    {% box sidebar_contact|join:'-' %}
-</address>
-
-</aside>
+</div>
+<div style="margin-top: 15px;" class="leftcontent">
+	<ul>
+		<li class="title">{% trans 'Quick Contact' %}</li>
+		<li>
+			{% listne "sidebar_contact" LANGUAGE_CODE as sidebar_contact %}
+			{% box sidebar_contact|join:'-' %}
+		</li>
+	</ul>
+</div>
+<div style="margin-top: 15px;" class="leftcontent">
+	<ul>
+		<li class="title">合作伙伴</li>
+		<style>.mylink1 p{padding:0px;margin:0px;float:left;width:33%;line-height:25px;}</style>
+		<li class="mylink1" style="margin-top: 5px;"> 
+			<p><a title="贫嘴网" target="_blank" href="http://www.pinzui.com">贫嘴网</a></p>
+			<p><a title="比购族" target="_blank" href="http://www.bigouzu.com">比购族</a></p>
+			<p><a title="标准化企业网站解决方案" target="_blank" href="http://speedcms.yancreate.com">SpeedCMS</a></p>
+		</li>
+	</ul>
+</div>
 {% endblock %}

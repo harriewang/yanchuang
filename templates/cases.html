@@ -8,53 +8,57 @@
 <link rel="stylesheet" href="/media/js/thickbox/thickbox.css" type="text/css" media="screen" />
 {% endblock %}
 {% block content%}
-<section id="content">
-	<h1>{{ content.title }}</h1>
-	<p>{{ content.content|safe }}</p>
-	
-	<section class="floatCases">
-            <h1>{%trans "Show Cases"%}</h1>
-			{% for case in cases.object_list %}
-            <article {% if forloop.last %}class="last"{% endif %}>
-              <a href="/case/{{case.slug}}" title="{{case.name}}">
-                <img src="{{ case.preview.thumbnail }}" />
-                <h1>{{case.name}}</h1>
-                <p>{{ case.description|escape|slice:":140" }}</p>
-              </a>
-            </article>
-			{% endfor %}
-								
-	</section>
-			    <span class="pagination">
-			        {% if cases.has_previous %}
-			            <a href="?page={{ cases.previous_page_number }}">&lt;&lt; {% trans "Previous"%} </a>
-			        {% endif %}
-			        <span class="current_page">
-			            &nbsp;{{ cases.number }}/{{ cases.paginator.num_pages }}&nbsp;
-			        {% if cases.has_next %}
-			            <a href="?page={{ cases.next_page_number }}"> {% trans "Next" %} &gt;&gt;</a>
-			        {% endif %}
-			    </span>
-</section>
+<div class="leftcontent">
+	<ul>
+	<li class="title">{%trans "Show Cases"%}</li>
+	{% for case in cases.object_list %}
+	<li class="caselist">
+	<img alt="{{case.name}}" src="{{ case.preview.thumbnail }}">
+	<a href="/case/{{case.slug}}" title="{{case.name}}"><b>{{case.name}}</b></a><br>
+	{{ case.description|escape|slice:":140" }}<br>
+	<a class="link" href="/case/{{case.slug}}">查看详细</a> | <a class="link" target="_blank" href="{{case.url}}">演示</a>
+	</li>
+	{% endfor %}
+	</ul>
+</div>
+<div class="page" style="float:Left">
+	{% if cases.has_previous %}
+	<a href="?page={{ cases.previous_page_number }}">&lt;&lt; {% trans "Previous"%} </a>
+	{% endif %}
+	<span class="current_page">
+	&nbsp;{{ cases.number }}/{{ cases.paginator.num_pages }}&nbsp;
+	{% if cases.has_next %}
+	<a href="?page={{ cases.next_page_number }}"> {% trans "Next" %} &gt;&gt;</a>
+	{% endif %}
+</div>
 {% endblock %}
 {% block sidebar%}
-<aside id="sidebar">
-	<nav class="navMenu">
-		<h1>{%trans 'Case Type'%}</h1>
-
-		<ul>
-			{% for cat in cases_categories %}
-			<li><a href="#">{{ cat.name }}</a></li>
-			{% endfor %}
-		</ul>
-	</nav>
-	
-	<h1>{%trans 'Quick Contact'%}</h1>
-
-	<address>
-		{% listne "sidebar_contact" LANGUAGE_CODE as sidebar_contact %}
-	    {% box sidebar_contact|join:'-' %}
-	</address>
-  
-</aside>
+<div style="margin-top: 15px;" class="leftcontent">
+	<ul>
+		<li class="title">{%trans 'Case Type'%}</li>
+		{% for cat in cases_categories %}
+		<li><a href="#">{{ cat.name }}</a></li>
+		{% endfor %}
+	</ul>
+</div>
+<div style="margin-top: 15px;" class="leftcontent">
+	<ul>
+		<li class="title">{% trans 'Quick Contact' %}</li>
+		<li>
+			{% listne "sidebar_contact" LANGUAGE_CODE as sidebar_contact %}
+			{% box sidebar_contact|join:'-' %}
+		</li>
+	</ul>
+</div>
+<div style="margin-top: 15px;" class="leftcontent">
+	<ul>
+		<li class="title">合作伙伴</li>
+		<style>.mylink1 p{padding:0px;margin:0px;float:left;width:33%;line-height:25px;}</style>
+		<li class="mylink1" style="margin-top: 5px;"> 
+			<p><a title="贫嘴网" target="_blank" href="http://www.pinzui.com">贫嘴网</a></p>
+			<p><a title="比购族" target="_blank" href="http://www.bigouzu.com">比购族</a></p>
+			<p><a title="标准化企业网站解决方案" target="_blank" href="http://speedcms.yancreate.com">SpeedCMS</a></p>
+		</li>
+	</ul>
+</div>
 {% endblock %}

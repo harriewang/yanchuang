@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Alpha 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-10 11:30+0800\n"
+"POT-Creation-Date: 2010-07-31 01:05+0800\n"
 "PO-Revision-Date: 2010-06-11 12:02+0830\n"
 "Last-Translator: Harrie <harrie@yancreate.com>\n"
 "Language-Team: Yan Chuang Network <contact@yancreate.com>\n"
@@ -164,15 +164,15 @@ msgstr ""
 msgid "Studio Navigations"
 msgstr ""
 
-#: apps/local/studiocontents/models.py:59 templates/index.html:44
+#: apps/local/studiocontents/models.py:59 templates/index.html:32
 msgid "News"
 msgstr "公司新闻"
 
-#: apps/local/studiocontents/models.py:60 templates/index.html:44
+#: apps/local/studiocontents/models.py:60 templates/index.html:32
 msgid "In Progress"
 msgstr "进行中"
 
-#: apps/local/studiocontents/models.py:61 templates/index.html:44
+#: apps/local/studiocontents/models.py:61 templates/index.html:32
 msgid "Done"
 msgstr "已完成"
 
@@ -256,15 +256,11 @@ msgstr ""
 msgid "Studio Cases"
 msgstr ""
 
-#: templates/base.html:38
-msgid "Yan Chuang Network"
-msgstr "岩创网络"
+#: templates/base.html:30
+msgid "Languages:"
+msgstr "语言"
 
-#: templates/base.html:39
-msgid "We build websites around the world"
-msgstr "我们为全世界建设网站"
-
-#: templates/base.html:47 templates/admin/500.html:4
+#: templates/base.html:48 templates/admin/500.html:4
 #: templates/admin/app_index.html:8 templates/admin/base.html:54
 #: templates/admin/change_form.html:17 templates/admin/change_list.html:25
 #: templates/admin/delete_confirmation.html:6
@@ -281,48 +277,28 @@ msgstr "我们为全世界建设网站"
 msgid "Home"
 msgstr "首页"
 
-#: templates/base.html:55
-msgid "Quick Navigation"
-msgstr "网站导航"
-
-#: templates/base.html:58
-msgid "Homepage"
-msgstr "首页"
-
-#: templates/base.html:59
-msgid "Sitemap"
-msgstr "网站地图"
-
-#: templates/base.html:60
-msgid "Contact"
-msgstr "联系信息"
-
-#: templates/base.html:63
-msgid "Languages:"
-msgstr "语言"
-
-#: templates/base.html:99
+#: templates/base.html:84
 msgid "&copy; Yan Chuang Network 2010, All rights reserved."
 msgstr "&copy; 岩创网络 2010, 版权所有"
 
-#: templates/caseDetail.html:30
+#: templates/caseDetail.html:32
 msgid "Visit site"
 msgstr "访问此网站"
 
-#: templates/caseDetail.html:30
+#: templates/caseDetail.html:32
 msgid "Contact us"
 msgstr "联系我们"
 
-#: templates/caseDetail.html:30
+#: templates/caseDetail.html:32
 msgid "More cases"
 msgstr "更多案例"
 
-#: templates/caseDetail.html:37 templates/content.html:14
-msgid "Navigation"
-msgstr "网站导航"
+#: templates/caseDetail.html:38 templates/cases.html:38
+msgid "Case Type"
+msgstr "案例类型"
 
-#: templates/caseDetail.html:55 templates/cases.html:52
-#: templates/content.html:32 templates/index.html:65
+#: templates/caseDetail.html:46 templates/cases.html:46
+#: templates/content.html:43 templates/index.html:51
 msgid "Quick Contact"
 msgstr "联系信息"
 
@@ -330,45 +306,49 @@ msgstr "联系信息"
 msgid "Show cases"
 msgstr "案例展示"
 
-#: templates/cases.html:16 templates/index.html:13
+#: templates/cases.html:13 templates/index.html:17
 msgid "Show Cases"
 msgstr "案例展示"
 
-#: templates/cases.html:30
+#: templates/cases.html:26
 msgid "Previous"
 msgstr ""
 
-#: templates/cases.html:35
+#: templates/cases.html:31
 msgid "Next"
 msgstr "下一页"
 
-#: templates/cases.html:43
-msgid "Case Type"
-msgstr "案例类型"
+#: templates/content.html:17
+msgid "Navigation"
+msgstr "网站导航"
 
-#: templates/index.html:41
-msgid "Company News"
-msgstr "公司新闻"
-
-#: templates/index.html:56
+#: templates/content.html:34 templates/index.html:42
 msgid "Services"
 msgstr "服务项目"
 
-#: templates/index.html:59
+#: templates/content.html:35 templates/index.html:43
 msgid "Web Design"
 msgstr "网站页面设计"
 
-#: templates/index.html:60
+#: templates/content.html:36 templates/index.html:44
 msgid "Website Content Management"
 msgstr "网站系统开发"
 
-#: templates/index.html:61
+#: templates/content.html:37 templates/index.html:45
 msgid "Business Systems"
 msgstr "电子商务网站开发"
 
-#: templates/index.html:62
+#: templates/content.html:38 templates/index.html:46
 msgid "Online Stores (e-commerce)"
 msgstr "在线商店"
+
+#: templates/index.html:17 templates/index.html.py:28
+msgid "more"
+msgstr "更多"
+
+#: templates/index.html:28
+msgid "Company News"
+msgstr "公司新闻"
 
 #: templates/admin/404.html:4 templates/admin/404.html.py:8
 msgid "Page not found"
@@ -806,3 +786,21 @@ msgstr ""
 #: templates/studio/base.html:43
 msgid "上海岩创网络科技有限公司"
 msgstr ""
+
+#~ msgid "Yan Chuang Network"
+#~ msgstr "岩创网络"
+
+#~ msgid "We build websites around the world"
+#~ msgstr "我们为全世界建设网站"
+
+#~ msgid "Quick Navigation"
+#~ msgstr "网站导航"
+
+#~ msgid "Homepage"
+#~ msgstr "首页"
+
+#~ msgid "Sitemap"
+#~ msgstr "网站地图"
+
+#~ msgid "Contact"
+#~ msgstr "联系信息"

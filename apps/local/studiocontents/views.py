@@ -12,7 +12,7 @@ def test(request):
 	
 def index(request):
 	
-	cases = Case.objects.filter(active=True)
+	cases = Case.objects.filter(active=True)[:6]
 	
 	# Get latest five news.
 	news = News.objects.filter(active=True)[:5]

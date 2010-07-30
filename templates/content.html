@@ -2,39 +2,60 @@
 {% load placeholders_tags i18n %}
 {% block head-title %}{{ content.title }} - {{STUDIO_INFO.title}}{% endblock %}
 {% block content%}
-<section id="content">
-	<h1>{{ content.title }}</h1>
+<div class="leftcontent">
+	<ul>
+		<li class="title">{{ content.title }}</li>
+		
+	</ul>
 	<p>{{ content.content|safe }}</p>
-</section>
+</div>
 {% endblock %}
 
 {% block sidebar%}
-<aside id="sidebar">
-	<nav class="navMenu">
-		<h1>{%trans 'Navigation'%}</h1>
-
-		<ul>
-			{% for menu in navigation_top %}
-	            {% if menu.navigation_set.all %}
-	                {% if menu.slug in request.path %}
-	                {% for sub_menu in menu.navigation_set.all %}
-	                <li><a href="{% url studiocontents.views.content sub_menu.slug %}">{{ sub_menu.title }}</a></li>
-	                {% endfor %}
-	                {% else %}
-	                <script>$('.navMenu').hide();</script>
-	                {% endif %}
-	            {% endif %}
-	        </li>
-	        {% endfor %}
-		</ul>
-	</nav>
-	
-	<h1>{%trans 'Quick Contact'%}</h1>
-
-	<address>
-		{% listne "sidebar_contact" LANGUAGE_CODE as sidebar_contact %}
-	    {% box sidebar_contact|join:'-' %}
-	</address>
-  
-</aside>
+<div style="margin-top: 15px;" id="navMenu" class="leftcontent">
+	<ul>
+		<li class="title">{%trans 'Navigation'%}</li>
+		{% for menu in navigation_top %}
+            {% if menu.navigation_set.all %}
+                {% if menu.slug in request.path %}
+                {% for sub_menu in menu.navigation_set.all %}
+                <li><a href="{% url studiocontents.views.content sub_menu.slug %}">{{ sub_menu.title }}</a></li>
+                {% endfor %}
+                {% else %}
+                <script>$('#navMenu').hide();</script>
+                {% endif %}
+            {% endif %}
+        </li>
+        {% endfor %}
+	</ul>
+</div>
+<div style="margin-top: 15px;" class="leftcontent">
+	<ul>
+		<li class="title">{%trans 'Services'%}</li>
+		<li><a href="/service/">{% trans "Web Design"%}</a></li>
+		<li><a href="/service/">{% trans "Website Content Management"%}</a></li>
+		<li><a href="/service/">{% trans "Business Systems"%}</a></li>
+		<li><a href="/service/">{% trans "Online Stores (e-commerce)"%}</a></li>
+	</ul>
+</div>
+<div style="margin-top: 15px;" class="leftcontent">
+	<ul>
+		<li class="title">{% trans 'Quick Contact' %}</li>
+		<li>
+			{% listne "sidebar_contact" LANGUAGE_CODE as sidebar_contact %}
+			{% box sidebar_contact|join:'-' %}
+		</li>
+	</ul>
+</div>
+<div style="margin-top: 15px;" class="leftcontent">
+	<ul>
+		<li class="title">合作伙伴</li>
+		<style>.mylink1 p{padding:0px;margin:0px;float:left;width:33%;line-height:25px;}</style>
+		<li class="mylink1" style="margin-top: 5px;"> 
+			<p><a title="贫嘴网" target="_blank" href="http://www.pinzui.com">贫嘴网</a></p>
+			<p><a title="比购族" target="_blank" href="http://www.bigouzu.com">比购族</a></p>
+			<p><a title="标准化企业网站解决方案" target="_blank" href="http://speedcms.yancreate.com">SpeedCMS</a></p>
+		</li>
+	</ul>
+</div>
 {% endblock %}
