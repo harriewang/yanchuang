@@ -14,7 +14,7 @@ $('#nav_home').addClass('active');
 </div>
 <div class="leftcontent" style="margin-top:15px; height:160px;">
 	<ul>
-		<li class="title"><a href="skins.asp" style="float:right; font-size:12px; font-weight:100;">{%trans "more"%}</a>{%trans "Show Cases"%}</li>
+		<li class="title"><a href="/showcase/" style="float:right; font-size:12px; font-weight:100;">{%trans "more"%}</a>{%trans "Show Cases"%}</li>
 		{% for case in cases %}
 		<li class="case"><img src="{{ case.preview.thumbnail }}" width="80" height="91" alt="" /><br /><A HREF="/showcase/">{{ case.name|truncatewords:"1"}}</a>
 		<p class="hidden">{{ case.description|safe|truncatewords:"10" }}</p>
@@ -63,6 +63,8 @@ $('#nav_home').addClass('active');
 			<p><a title="贫嘴网" target="_blank" href="http://www.pinzui.com">贫嘴网</a></p>
 			<p><a title="比购族" target="_blank" href="http://www.bigouzu.com">比购族</a></p>
 			<p><a title="标准化企业网站解决方案" target="_blank" href="http://speedcms.yancreate.com">SpeedCMS</a></p>
+			<p><a title="老岩的布拉格" target="_blank" href="http://www.wduw.com/">老岩的布拉格</a></p>
+			<p><a title="Luffy的博客" target="_blank" href="http://speedcms.yancreate.com">On My Way</a></p>
 		</li>
 	</ul>
 </div>
