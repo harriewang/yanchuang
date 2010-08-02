@@ -37,6 +37,7 @@ ul#lang li.fr a span               { background-position: -70px 0; }
 .leftcontent {  }
 .leftcontent ul { margin:0px; padding:0px; list-style:none; }
 /*.leftcontent ul li img { border:1px solid #ddd; background:#fff; padding:3px; float:left; margin:0px 6px 5px 0px}*/
+.caselist img { border:1px solid #ddd; background:#fff; padding:3px; float:left; margin:0px 6px 5px 0px}
 .leftcontent ul li span { display:block; font-weight:bold; padding-left:10px; }
 .leftcontent2 ul { margin:0px; padding:0px; list-style:none; }
 .leftcontent2 ul li img { border:1px solid #ddd; background:#fff; padding:3px; float:left; margin:0px 6px 5px 0px}
