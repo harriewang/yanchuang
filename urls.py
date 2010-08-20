@@ -9,10 +9,12 @@ urlpatterns = patterns('',
     (r'^test/$','studiocontents.views.test'),
     (r'^admin/', include(admin.site.urls)),
     (r'^showcase/$','studiocontents.views.cases'),
+    (r'^news/$','studiocontents.views.news'),
     # i18n
     (r'^i18n/', include('django.conf.urls.i18n')),
     
     (r'^case/(?P<case_slug>[a-z0-9-_]+)/$','studiocontents.views.caseDetail'),
+    (r'^news/(?P<news_slug>[a-z0-9-_]+)/$','studiocontents.views.newsDetail'),
     (r'(?P<navigation_slug>[a-z0-9-_]+)/$','studiocontents.views.content'),
     
 

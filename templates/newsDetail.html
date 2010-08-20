@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load placeholders_tags i18n %}
+{% block head-title %}{{ news.title }} - {{STUDIO_INFO.title}}{% endblock %}
+{% block head-script %}
+<script type="text/javascript" src="/media/js/ui/jquery.ui.core.js"></script>
+<script type="text/javascript" src="/media/js/ui/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="/media/js/ui/jquery.ui.button.js"></script>
+<script type="text/javascript" src="/media/js/thickbox/thickbox.js"></script>
+<script type="text/javascript">
+$(function() {
+	$(".visitbutton").button({
+		icons: {
+		    primary: 'ui-icon-contact'
+		}
+	});
+});
+</script>
+{% endblock %}
+{% block head-style %}
+<link rel="stylesheet" href="/media/js/thickbox/thickbox.css" type="text/css" media="screen" />
+<link type="text/css" href="/media/css/ui/jquery.ui.all.css" rel="stylesheet" />
+{% endblock %}
+{% block content%}
+<div class="leftcontent">
+	<ul>
+		<li class="title">{{ news.title }}</li>
+		
+	</ul>
+	<p>{{ news.content|safe }}</p>
+</div>
+{% endblock %}
+{% block sidebar%}
+<div style="margin-top: 15px;" class="leftcontent">
+	<ul>
+		<li class="title">{% trans 'Quick Contact' %}</li>
+		<li>
+			{% listne "sidebar_contact" LANGUAGE_CODE as sidebar_contact %}
+			{% box sidebar_contact|join:'-' %}
+		</li>
+	</ul>
+</div>
+<div style="margin-top: 15px;" class="leftcontent">
+	<ul>
+		<li class="title">合作伙伴</li>
+		<style>.mylink1 p{padding:0px;margin:0px;float:left;width:33%;line-height:25px;}</style>
+		<li class="mylink1" style="margin-top: 5px;"> 
+			<p><a title="贫嘴网" target="_blank" href="http://www.pinzui.com">贫嘴网</a></p>
+			<p><a title="比购族" target="_blank" href="http://www.bigouzu.com">比购族</a></p>
+			<p><a title="标准化企业网站解决方案" target="_blank" href="http://speedcms.yancreate.com">SpeedCMS</a></p>
+			<p><a title="老岩的布拉格" target="_blank" href="http://www.wduw.com/">老岩的布拉格</a></p>
+			<p><a title="Luffy的博客" target="_blank" href="http://speedcms.yancreate.com">On My Way</a></p>
+		</li>
+	</ul>
+</div>
+{% endblock %}

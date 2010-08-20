@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load placeholders_tags i18n %}
+{% block head-title %}{%trans "Company News"%} - {{STUDIO_INFO.title}}{% endblock %}
+{% block head-script %}
+<script type="text/javascript" src="/media/js/thickbox/thickbox.js"></script>
+{% endblock %}
+{% block head-style %}
+<link rel="stylesheet" href="/media/js/thickbox/thickbox.css" type="text/css" media="screen" />
+{% endblock %}
+{% block content%}
+<div class="leftcontent" style="border:1px solid #CCE6F1; padding:10px;">
+	<ul>
+		<li class="title">{%trans "Company News"%}</li>
+		{% for item in news.object_list %}
+		<li><small style="float:right">( {{item.create_time}} )</small><img src="images/arrow.gif" /><a href="/news/{{item.slug}}" target="_blank">{{item.title}}</a></li>
+		{% endfor %}
+	</ul>
+</div>
+<div class="page" style="float:Left">
+	{% if news.has_previous %}
+	<a href="?page={{ news.previous_page_number }}">&lt;&lt; {% trans "Previous"%} </a>
+	{% endif %}
+	<span class="current_page">
+	&nbsp;{{ news.number }}/{{ news.paginator.num_pages }}&nbsp;
+	{% if news.has_next %}
+	<a href="?page={{ news.next_page_number }}"> {% trans "Next" %} &gt;&gt;</a>
+	{% endif %}
+</div>
+{% endblock %}
+{% block sidebar%}
+<div style="margin-top: 15px;" class="leftcontent">
+	<ul>
+		<li class="title">{% trans 'Quick Contact' %}</li>
+		<li>
+			{% listne "sidebar_contact" LANGUAGE_CODE as sidebar_contact %}
+			{% box sidebar_contact|join:'-' %}
+		</li>
+	</ul>
+</div>
+<div style="margin-top: 15px;" class="leftcontent">
+	<ul>
+		<li class="title">合作伙伴</li>
+		<style>.mylink1 p{padding:0px;margin:0px;float:left;width:33%;line-height:25px;}</style>
+		<li class="mylink1" style="margin-top: 5px;"> 
+			<p><a title="贫嘴网" target="_blank" href="http://www.pinzui.com">贫嘴网</a></p>
+			<p><a title="比购族" target="_blank" href="http://www.bigouzu.com">比购族</a></p>
+			<p><a title="标准化企业网站解决方案" target="_blank" href="http://speedcms.yancreate.com">SpeedCMS</a></p>
+			<p><a title="老岩的布拉格" target="_blank" href="http://www.wduw.com/">老岩的布拉格</a></p>
+			<p><a title="Luffy的博客" target="_blank" href="http://speedcms.yancreate.com">On My Way</a></p>
+		</li>
+	</ul>
+</div>
+{% endblock %}

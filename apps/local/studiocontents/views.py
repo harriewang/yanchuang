@@ -73,5 +73,40 @@ def caseDetail(request, case_slug):
 		{'case':case},
 		context_instance = RequestContext(request)
 	)
+
+def news(request):
+	news = News.objects.filter(active=True)
+	
+	paginator = Paginator(news, 8) #show how many news per page
+	
+	# Make sure page request is an int. If not, deliver first page
+	try:
+	    page = int(request.GET.get('page', '1'))
+	except ValueError:
+	    page = 1
+	
+	# If page request is out of range, deliver last page.    
+	try:
+	    news = paginator.page(page)
+	except (EmptyPage, InvalidPage):
+	    news = paginator.page(paginator.num_pages)
+	
+	return render_to_response(
+		'news.html',
+		{
+			'news':news
+		},
+		context_instance = RequestContext(request)
+	)
+
+def newsDetail(request, news_slug):
+	
+	news = get_object_or_404(News, slug=news_slug)
+	
+	return render_to_response(
+		'newsDetail.html',
+		{'news':news},
+		context_instance = RequestContext(request)
+	)
 		
 	
