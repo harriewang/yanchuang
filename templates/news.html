@@ -12,7 +12,7 @@
 	<ul>
 		<li class="title">{%trans "Company News"%}</li>
 		{% for item in news.object_list %}
-		<li><small style="float:right">( {{item.create_time}} )</small><img src="images/arrow.gif" /><a href="/news/{{item.slug}}" target="_blank">{{item.title}}</a></li>
+		<li><small style="float:right">( {{item.create_time}} )</small><img src="/media/img/blue/arrow.gif" /><a href="/news/{{item.slug}}" target="_blank">{{item.title}}</a></li>
 		{% endfor %}
 	</ul>
 </div>
