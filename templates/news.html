@@ -11,10 +11,16 @@
 <div class="leftcontent" style="border:1px solid #CCE6F1; padding:10px;">
 	<ul>
 		<li class="title">{%trans "Company News"%}</li>
-		{% for item in news.object_list %}
-		<li><small style="float:right">( {{item.create_time}} )</small><img src="/media/img/blue/arrow.gif" /><a href="/news/{{item.slug}}" target="_blank">{{item.title}}</a></li>
-		{% endfor %}
 	</ul>
+	<table width="100%">
+	{% for item in news.object_list %}
+	<tr>
+		<td width="10"><img src="/media/img/blue/arrow.gif" /></td>
+		<td><a href="/news/{{item.slug}}" target="_blank">{{item.title}}</a></td>
+		<td width="130" align="right"><small>( {{item.create_time}} )</small></td>
+	</tr>
+	{% endfor %}
+	</table>
 </div>
 <div class="page" style="float:Left">
 	{% if news.has_previous %}
