@@ -77,7 +77,7 @@ def caseDetail(request, case_slug):
 def news(request):
 	news = News.objects.filter(active=True)
 	
-	paginator = Paginator(news, 8) #show how many news per page
+	paginator = Paginator(news, 20) #show how many news per page
 	
 	# Make sure page request is an int. If not, deliver first page
 	try:

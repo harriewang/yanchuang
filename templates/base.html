@@ -30,7 +30,7 @@ var LANGUAGE_CODE = '{{ LANGUAGE_CODE }}'
 	<h2 class="hidden">{% trans "Languages:" %}</h2>
 	<ul id="lang">
 		{% for language in LANGUAGES %}
-		<li class="{% ifequal language.0 'zh-cn'%}cn{%else%}{{ language.0 }}{% endifequal %}"><a href="javascript:void(0)" onclick="setlang('{{ language.0 }}')" title="{{ language.1 }}"><span></span>{{ language.0 }}</a></li>
+		<li class="{% ifequal language.0 'zh-cn'%}cn{%else%}{{ language.0 }}{% endifequal %}"><a href="###" onclick="setlang('{{ language.0 }}')" title="{{ language.1 }}"><span></span>{{ language.0 }}</a></li>
 		{% endfor %}
 	</ul>
 	<form id="setlang" action="/i18n/setlang/" method="post" class="hidden">

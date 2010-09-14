@@ -5,8 +5,8 @@
 $('#nav_home').addClass('active');
 </script>
 {#<div style="margin-bottom:10px;">#}
-{#<a href="###" target="_blank"><img src="images/gamebto.gif" /></a>#}
-{#<a href="###" target="_blank"><img src="images/union_bak.gif" /></a>#}
+{#<a href="###" target="_blank"><img src="/media/img/blue/index/top1.gif" /></a>#}
+{#<a href="###" target="_blank"><img src="/media/img/blue/index/top2.gif" /></a>#}
 {#</div>#}
 <div id="hoverpage">
 	{% listne "hoverpage" LANGUAGE_CODE as hoverpage %}
@@ -29,7 +29,7 @@ $('#nav_home').addClass('active');
 		</li>
        	{% for news in news %}
 		<li style="margin-top:5px; width:100%; float:left; line-height:18px;">
-			<a href="###" target="_blank"><b>{{news.title}}</b></a>{%ifequal news.news_type 'news'%}{%trans "News"%}{%endifequal%}{%ifequal news.news_type 'done'%}{%trans "Done"%}{%endifequal%}{%ifequal news.news_type 'doing'%}{%trans "In Progress"%}{%endifequal%}</small><BR>
+			<a href="/news/{{news.slug}}"><b>{{news.title}}</b></a> {%ifequal news.news_type 'news'%}{%trans "News"%}{%endifequal%}{%ifequal news.news_type 'done'%}{%trans "Done"%}{%endifequal%}{%ifequal news.news_type 'doing'%}{%trans "In Progress"%}{%endifequal%}</small><BR>
 			{{news.content}}
 		</li>
 		{% endfor %}

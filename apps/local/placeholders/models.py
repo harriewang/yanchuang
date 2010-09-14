@@ -23,7 +23,7 @@ class Box(models.Model):
 	
 	name         = models.SlugField(_('Box Name'), unique=True, max_length=100, help_text=_('Used as a hook in the template (Letters, numbers, underscores and hyphens only).'))
 	description  = models.CharField(_('Box Description'), max_length=200, blank=True)
-	content      = tinymce_models.HTMLField(_('Box Content'), blank=True)
+	content      = models.TextField(_('Box Content'), blank=True) # tinymce_models.HTMLField
 	weight       = models.IntegerField(_('Weight'), default=0)
 	active       = models.BooleanField(_('Actived'), default=True)
 	placeholders = models.ManyToManyField('Placeholder', blank=True)
